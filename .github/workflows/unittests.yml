@@ -1,0 +1,30 @@
+name: Integration Tests
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+jobs:
+  integrationtest:
+    timeout-minutes: 10
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 1
+      # https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs#defining-the-maximum-number-of-concurrent-jobs
+      matrix:
+        dotnet_version: ["8"]
+        os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ matrix.dotnet_version }}
+        # name: Start containers
+        # run: docker compose -f "BO4EGremlin.Web/docker-compose.yml" up -d
+      - name: Run integration tests
+        run: dotnet test BO4EGremlin.IntegrationTests/BO4EGremlin.IntegrationTests.csproj
+      # - name: Stop containers
+      #  if: always()
+      #  run: docker compose -f "BO4EGremlin.Web/docker-compose.yml" down -v

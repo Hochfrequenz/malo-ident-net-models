@@ -9,7 +9,6 @@ namespace MaLoIdentModelsTests;
 /// </summary>
 public class RoundTripTests
 {
-    
     [Fact]
     public void Test_Request()
     {
@@ -18,10 +17,12 @@ public class RoundTripTests
         var model = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(fileBody);
         model.Should().NotBeNull();
         var reSererialized = System.Text.Json.JsonSerializer.Serialize(model);
-        var deserialized = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(reSererialized);
-        deserialized.Should().BeEquivalentTo(model);        
+        var deserialized = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(
+            reSererialized
+        );
+        deserialized.Should().BeEquivalentTo(model);
     }
-    
+
     [Fact]
     public void Test_Positive_Result()
     {
@@ -30,9 +31,13 @@ public class RoundTripTests
         var model = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(fileBody, settings);
         model.Should().NotBeNull();
         var reSererialized = System.Text.Json.JsonSerializer.Serialize(model, settings);
-        var deserialized = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(reSererialized, settings);
-        deserialized.Should().BeEquivalentTo(model);        
+        var deserialized = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(
+            reSererialized,
+            settings
+        );
+        deserialized.Should().BeEquivalentTo(model);
     }
+
     [Fact]
     public void Test_Positive_Negative()
     {
@@ -41,7 +46,10 @@ public class RoundTripTests
         var model = System.Text.Json.JsonSerializer.Deserialize<ResultNegative>(fileBody, settings);
         model.Should().NotBeNull();
         var reSererialized = System.Text.Json.JsonSerializer.Serialize(model, settings);
-        var deserialized = System.Text.Json.JsonSerializer.Deserialize<ResultNegative>(reSererialized, settings);
-        deserialized.Should().BeEquivalentTo(model);        
+        var deserialized = System.Text.Json.JsonSerializer.Deserialize<ResultNegative>(
+            reSererialized,
+            settings
+        );
+        deserialized.Should().BeEquivalentTo(model);
     }
 }

@@ -7,9 +7,6 @@ public static class JsonSettings
 {
     public static JsonSerializerOptions GetJsonSerializerOptions()
     {
-        return new JsonSerializerOptions()
-        {
-            Converters = { new JsonStringEnumConverter() }
-        };
+        return new JsonSerializerOptions() { Converters = { new JsonStringEnumConverter() } };
     }
 }

@@ -3,8 +3,8 @@ namespace MaLoIdentModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 public enum EnergyDirection
 {
@@ -12,7 +12,7 @@ public enum EnergyDirection
     Consumption,
 
     [EnumMember(Value = "production")]
-    Production
+    Production,
 }
 
 public enum MarketLocationProperty
@@ -24,7 +24,7 @@ public enum MarketLocationProperty
     NonActive,
 
     [EnumMember(Value = "standard")]
-    Standard
+    Standard,
 }
 
 public enum MeasurementTechnologyClassification
@@ -36,7 +36,7 @@ public enum MeasurementTechnologyClassification
     ConventionalMeasuringSystem,
 
     [EnumMember(Value = "noMeasurement")]
-    NoMeasurement
+    NoMeasurement,
 }
 
 public enum OptionalChangeForecastBasis
@@ -45,7 +45,7 @@ public enum OptionalChangeForecastBasis
     Possible,
 
     [EnumMember(Value = "notPossible")]
-    NotPossible
+    NotPossible,
 }
 
 public enum Proportion
@@ -54,7 +54,7 @@ public enum Proportion
     BilateralAgreement,
 
     [EnumMember(Value = "percent")]
-    Percent
+    Percent,
 }
 
 public enum Zone
@@ -66,7 +66,7 @@ public enum Zone
     UTMZone32,
 
     [EnumMember(Value = "UTMZone33")]
-    UTMZone33
+    UTMZone33,
 }
 
 public class Address
@@ -126,25 +126,25 @@ public class IdentificationParameter
 public class GeographicCoordinates
 {
     [JsonPropertyName("latitude")]
-    public Decimal Latitude { get; set; }
+    public string Latitude { get; set; }
 
     [JsonPropertyName("longitude")]
-    public Decimal Longitude { get; set; }
+    public string Longitude { get; set; }
 
     [JsonPropertyName("east")]
-    public Decimal East { get; set; }
+    public string East { get; set; }
 
     [JsonPropertyName("north")]
-    public Decimal North { get; set; }
+    public string North { get; set; }
 
     [JsonPropertyName("zone")]
     public Zone? Zone { get; set; }
 
     [JsonPropertyName("northing")]
-    public Decimal Northing { get; set; }
+    public string Northing { get; set; }
 
     [JsonPropertyName("easting")]
-    public Decimal Easting { get; set; }
+    public string Easting { get; set; }
 }
 
 public class Name
@@ -222,6 +222,7 @@ public class MarketLocationTransmissionSystemOperator
     [JsonPropertyName("executionTimeUntil")]
     public DateTimeOffset? ExecutionTimeUntil { get; set; }
 }
+
 public class ResultNegative
 {
     [JsonPropertyName("decisionTree")]
@@ -254,8 +255,9 @@ public class DataMarketLocation
     [JsonPropertyName("optionalChangeForecastBasis")]
     public OptionalChangeForecastBasis OptionalChangeForecastBasis { get; set; }
 
+    // Change this to a list to match the JSON structure
     [JsonPropertyName("dataMarketLocationProperties")]
-    public MarketLocationProperties DataMarketLocationProperties { get; set; }
+    public List<MarketLocationProperties> DataMarketLocationProperties { get; set; }
 
     [JsonPropertyName("dataMarketLocationNetworkOperators")]
     public List<MarketLocationNetworkOperator> DataMarketLocationNetworkOperators { get; set; }
@@ -338,7 +340,7 @@ public class DataTechnicalResource
 public class ResultPositive
 {
     [JsonPropertyName("dataMarketLocation")]
-    public List<DataMarketLocation> DataMarketLocation { get; set; }
+    public DataMarketLocation DataMarketLocation { get; set; }
 
     [JsonPropertyName("dataTranches")]
     public List<DataTranche> DataTranches { get; set; }
