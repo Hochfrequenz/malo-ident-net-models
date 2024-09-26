@@ -1,4 +1,4 @@
-name: Integration Tests
+name: Unit Tests
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "main"
   pull_request:
 jobs:
-  integrationtest:
+  tests:
     timeout-minutes: 10
     runs-on: ${{ matrix.os }}
     strategy:
@@ -21,10 +21,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet_version }}
-        # name: Start containers
-        # run: docker compose -f "BO4EGremlin.Web/docker-compose.yml" up -d
       - name: Run integration tests
-        run: dotnet test BO4EGremlin.IntegrationTests/BO4EGremlin.IntegrationTests.csproj
-      # - name: Stop containers
-      #  if: always()
-      #  run: docker compose -f "BO4EGremlin.Web/docker-compose.yml" down -v
+        run: dotnet test MaLoIdentModelsTests/MaLoIdentModelsTests.csproj
+        working-directory: "MaLoIdentModels"
