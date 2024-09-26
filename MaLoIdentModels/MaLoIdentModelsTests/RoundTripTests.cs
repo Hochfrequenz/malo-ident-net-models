@@ -1,5 +1,6 @@
 using FluentAssertions;
 using MaLoIdentModels;
+using Xunit;
 
 namespace MaLoIdentModelsTests;
 

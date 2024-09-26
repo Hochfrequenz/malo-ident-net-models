@@ -338,7 +338,7 @@ public class DataTechnicalResource
 public class ResultPositive
 {
     [JsonPropertyName("dataMarketLocation")]
-    public DataMarketLocation DataMarketLocation { get; set; }
+    public List<DataMarketLocation> DataMarketLocation { get; set; }
 
     [JsonPropertyName("dataTranches")]
     public List<DataTranche> DataTranches { get; set; }
