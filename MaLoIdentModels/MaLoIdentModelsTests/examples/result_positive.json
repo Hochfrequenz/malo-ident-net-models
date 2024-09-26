@@ -1,0 +1,129 @@
+{
+  "dataMarketLocation": {
+    "maloId": "57685676748",
+    "energyDirection": "consumption",
+    "measurementTechnologyClassification": "intelligentMeasuringSystem",
+    "optionalChangeForecastBasis": "possible",
+    "dataMarketLocationProperties": [
+      {
+        "marketLocationProperty": "standard",
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "dataMarketLocationNetworkOperators": [
+      {
+        "marketPartnerId": 9900987654321,
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "dataMarketLocationMeasuringPointOperators": [
+      {
+        "marketPartnerId": 9900987654321,
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "dataMarketLocationTransmissionSystemOperators": [
+      {
+        "marketPartnerId": 9900987654321,
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "dataMarketLocationSuppliers": [
+      {
+        "marketPartnerId": 9900987654321,
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "dataMarketLocationName": {
+      "surnames": "Becker",
+      "firstnames": "Michael",
+      "title": "Prof.Dr.",
+      "company": "BDEW & Co. KG"
+    },
+    "dataMarketLocationAddress": {
+      "countryCode": "DE",
+      "zipCode": "12117",
+      "city": "Berlin",
+      "street": "Reinhardtstraße",
+      "houseNumber": 32,
+      "houseNumberAddition": "F"
+    },
+    "dataMarketLocationLandParcels": [
+      {
+        "districtName": "string",
+        "lotNumber": "string",
+        "subLotNumber": "string"
+      }
+    ],
+    "dataMarketLocationGeographicCoordinates": {
+      "latitude": "string",
+      "longitude": "string",
+      "east": "string",
+      "north": "string",
+      "zone": "UTMZone31",
+      "northing": "string",
+      "easting": "string"
+    }
+  },
+  "dataTranches": [
+    {
+      "tranchenId": "57685676742",
+      "proportion": "percent",
+      "percent": 75.912,
+      "dataTrancheSuppliers": [
+        {
+          "marketPartnerId": 9900987654321,
+          "executionTimeFrom": "2023-08-01T22:00:00Z",
+          "executionTimeUntil": "2023-08-01T22:00:00Z"
+        }
+      ]
+    }
+  ],
+  "dataMeterLocations": [
+    {
+      "meloId": "DE00014545768S0000000000000003054",
+      "meterNumber": "1SM-8465929523",
+      "dataMeterLocationMeasuringPointOperators": [
+        {
+          "marketPartnerId": 9900987654321,
+          "executionTimeFrom": "2023-08-01T22:00:00Z",
+          "executionTimeUntil": "2023-08-01T22:00:00Z"
+        }
+      ]
+    }
+  ],
+  "dataTechnicalResources": [
+    {
+      "trId": "D1234848431"
+    }
+  ],
+  "dataControllableResources": [
+    {
+      "srId": "C1234848431",
+      "dataControllableResourceMeasuringPointOperators": [
+        {
+          "marketPartnerId": 9900987654321,
+          "executionTimeFrom": "2023-08-01T22:00:00Z",
+          "executionTimeUntil": "2023-08-01T22:00:00Z"
+        }
+      ]
+    }
+  ],
+  "dataNetworkLocations": [
+    {
+      "neloId": "E1234848431",
+      "dataNetworkLocationMeasuringPointOperators": [
+        {
+          "marketPartnerId": 9900987654321,
+          "executionTimeFrom": "2023-08-01T22:00:00Z",
+          "executionTimeUntil": "2023-08-01T22:00:00Z"
+        }
+      ]
+    }
+  ]
+}
