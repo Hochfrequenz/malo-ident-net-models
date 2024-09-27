@@ -38,7 +38,7 @@ jobs:
       - name: Build/Check for compile errors (dotnet build)
         working-directory: "MaLoIdentModels"
         run: dotnet build --configuration Release
-      - name: Create Package AhbichtClient (dotnet pack)
+      - name: Create Package MaLoIdentModels (dotnet pack)
         working-directory: "MaLoIdentModels/MaLoIdentModels"
         run: dotnet pack MaLoIdentModels.csproj --configuration Release -p:PackageVersion="${{ steps.tagTBC.outputs.tag }}"
       - name: Setup Nuget.exe
