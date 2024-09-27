@@ -17,7 +17,7 @@ jobs:
         working-directory: "MaLoIdentModels"
         run: dotnet build --configuration Release
       - name: Run Unit Tests (dotnet test) # never ever release with failing tests!
-        working-directory: "AhbichtClient"
+        working-directory: "MaLoIdentModels"
         run: dotnet test --configuration Release
   push_release:
     needs: run_tests
