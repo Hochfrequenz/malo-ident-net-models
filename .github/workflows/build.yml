@@ -1,0 +1,26 @@
+# ensures that the solution can be built in release mode
+name: build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8
+      - name: restore
+        run: dotnet workload restore
+        working-directory: "MaLoIdentModels"
+      - name: Build/Check for compile errors (dotnet build)
+        run: dotnet build --configuration Release
+        working-directory: "MaLoIdentModels"
