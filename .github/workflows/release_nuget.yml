@@ -36,7 +36,7 @@ jobs:
         with:
           tagRegex: "v(\\d+\\.\\d+\\.\\d+)"
       - name: Build/Check for compile errors (dotnet build)
-        working-directory: "AhbichtClient"
+        working-directory: "MaLoIdentModels"
         run: dotnet build --configuration Release
       - name: Create Package AhbichtClient (dotnet pack)
         working-directory: "MaLoIdentModels/MaLoIdentModels"
