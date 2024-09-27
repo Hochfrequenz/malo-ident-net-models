@@ -1,6 +1,5 @@
 using FluentAssertions;
 using MaLoIdentModels;
-using Xunit;
 
 namespace MaLoIdentModelsTests;
 
@@ -51,5 +50,19 @@ public class RoundTripTests
             settings
         );
         deserialized.Should().BeEquivalentTo(model);
+    }
+
+    [Fact]
+    public void Test_README_Example()
+    {
+        var myNegativeResponse = new ResultNegative()
+        {
+            DecisionTree = "E_0594",
+            ResponseCode = "A10",
+            Reason = "Ich bin ein Freitext.",
+            NetworkOperator = 9900987654321,
+        };
+        var myJson = System.Text.Json.JsonSerializer.Serialize(myNegativeResponse);
+        Console.Out.WriteLine(myJson);
     }
 }
