@@ -9,7 +9,12 @@
     "customerNumber": "V567345345"
   },
   "identificationParameterAddress": {
-    "name": {"surnames": "Becker", "firstnames": "Michael", "title": "Prof.Dr.", "company": "BDEW & Co. KG"},
+    "name": {
+      "surnames": "Becker",
+      "firstnames": "Michael",
+      "title": "Prof.Dr.",
+      "company": "BDEW & Co. KG"
+    },
     "address": {
       "countryCode": "DE",
       "zipCode": "12117",
@@ -18,7 +23,13 @@
       "houseNumber": 32,
       "houseNumberAddition": "F"
     },
-    "landParcels": [{"districtName": "string", "lotNumber": "string", "subLotNumber": "string"}],
+    "landParcels": [
+      {
+        "districtName": "string",
+        "lotNumber": "string",
+        "subLotNumber": "string"
+      }
+    ],
     "geographicCoordinates": {
       "latitude": "string",
       "longitude": "string",
