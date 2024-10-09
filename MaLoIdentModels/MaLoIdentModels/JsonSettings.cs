@@ -1,7 +1,7 @@
+namespace MaLoIdentModels;
+
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
-namespace MaLoIdentModels;
 
 public static class JsonSettings
 {

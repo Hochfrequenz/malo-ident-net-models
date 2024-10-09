@@ -9,11 +9,9 @@ using System.Text.Json.Serialization;
 
 public enum EnergyDirection
 {
-    [EnumMember(Value = "consumption")]
-    Consumption,
+    [EnumMember(Value = "consumption")] Consumption,
 
-    [EnumMember(Value = "production")]
-    Production,
+    [EnumMember(Value = "production")] Production,
 }
 
 public enum MarketLocationProperty
@@ -21,11 +19,9 @@ public enum MarketLocationProperty
     [EnumMember(Value = "customerFacility")]
     CustomerFacility,
 
-    [EnumMember(Value = "nonActive")]
-    NonActive,
+    [EnumMember(Value = "nonActive")] NonActive,
 
-    [EnumMember(Value = "standard")]
-    Standard,
+    [EnumMember(Value = "standard")] Standard,
 }
 
 public enum MeasurementTechnologyClassification
@@ -36,17 +32,14 @@ public enum MeasurementTechnologyClassification
     [EnumMember(Value = "conventionalMeasuringSystem")]
     ConventionalMeasuringSystem,
 
-    [EnumMember(Value = "noMeasurement")]
-    NoMeasurement,
+    [EnumMember(Value = "noMeasurement")] NoMeasurement,
 }
 
 public enum OptionalChangeForecastBasis
 {
-    [EnumMember(Value = "possible")]
-    Possible,
+    [EnumMember(Value = "possible")] Possible,
 
-    [EnumMember(Value = "notPossible")]
-    NotPossible,
+    [EnumMember(Value = "notPossible")] NotPossible,
 }
 
 public enum Proportion
@@ -54,20 +47,16 @@ public enum Proportion
     [EnumMember(Value = "bilateralAgreement")]
     BilateralAgreement,
 
-    [EnumMember(Value = "percent")]
-    Percent,
+    [EnumMember(Value = "percent")] Percent,
 }
 
 public enum Zone
 {
-    [EnumMember(Value = "UTMZone31")]
-    UTMZone31,
+    [EnumMember(Value = "UTMZone31")] UTMZone31,
 
-    [EnumMember(Value = "UTMZone32")]
-    UTMZone32,
+    [EnumMember(Value = "UTMZone32")] UTMZone32,
 
-    [EnumMember(Value = "UTMZone33")]
-    UTMZone33,
+    [EnumMember(Value = "UTMZone33")] UTMZone33,
 }
 
 public class Address
@@ -76,17 +65,13 @@ public class Address
     [RegularExpression(@"[A-Z]{2}")]
     public string CountryCode { get; set; }
 
-    [JsonPropertyName("zipCode")]
-    public string ZipCode { get; set; }
+    [JsonPropertyName("zipCode")] public string ZipCode { get; set; }
 
-    [JsonPropertyName("city")]
-    public string City { get; set; }
+    [JsonPropertyName("city")] public string City { get; set; }
 
-    [JsonPropertyName("street")]
-    public string Street { get; set; }
+    [JsonPropertyName("street")] public string Street { get; set; }
 
-    [JsonPropertyName("houseNumber")]
-    public int HouseNumber { get; set; }
+    [JsonPropertyName("houseNumber")] public int HouseNumber { get; set; }
 
     [JsonPropertyName("houseNumberAddition")]
     public string HouseNumberAddition { get; set; }
@@ -98,9 +83,11 @@ public class MarketLocationDateTime
     [RegularExpression(@"\d{11}")]
     public string MaloId { get; set; }
 
+    [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeFrom")]
     public DateTimeOffset ExecutionTimeFrom { get; set; }
 
+    [JsonConverter(typeof(NullableDateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeUntil")]
     public DateTimeOffset? ExecutionTimeUntil { get; set; }
 }
@@ -111,79 +98,66 @@ public class IdentificationParameter
     [RegularExpression(@"\d{11}")]
     public string MaloId { get; set; }
 
-    [JsonPropertyName("tranchenIds")]
-    public List<string> TranchenIds { get; set; }
+    [JsonPropertyName("tranchenIds")] public List<string> TranchenIds { get; set; }
 
-    [JsonPropertyName("meloIds")]
-    public List<string> MeloIds { get; set; }
+    [JsonPropertyName("meloIds")] public List<string> MeloIds { get; set; }
 
-    [JsonPropertyName("meterNumbers")]
-    public List<string> MeterNumbers { get; set; }
+    [JsonPropertyName("meterNumbers")] public List<string> MeterNumbers { get; set; }
 
-    [JsonPropertyName("customerNumber")]
-    public string CustomerNumber { get; set; }
+    [JsonPropertyName("customerNumber")] public string CustomerNumber { get; set; }
 }
 
 public class GeographicCoordinates
 {
-    [JsonPropertyName("latitude")]
-    public string Latitude { get; set; }
+    [JsonPropertyName("latitude")] public string Latitude { get; set; }
 
-    [JsonPropertyName("longitude")]
-    public string Longitude { get; set; }
+    [JsonPropertyName("longitude")] public string Longitude { get; set; }
 
-    [JsonPropertyName("east")]
-    public string East { get; set; }
+    [JsonPropertyName("east")] public string East { get; set; }
 
-    [JsonPropertyName("north")]
-    public string North { get; set; }
+    [JsonPropertyName("north")] public string North { get; set; }
 
-    [JsonPropertyName("zone")]
-    public Zone? Zone { get; set; }
+    [JsonPropertyName("zone")] public Zone? Zone { get; set; }
 
-    [JsonPropertyName("northing")]
-    public string Northing { get; set; }
+    [JsonPropertyName("northing")] public string Northing { get; set; }
 
-    [JsonPropertyName("easting")]
-    public string Easting { get; set; }
+    [JsonPropertyName("easting")] public string Easting { get; set; }
 }
 
 public class Name
 {
-    [JsonPropertyName("surnames")]
-    public string Surnames { get; set; }
+    [JsonPropertyName("surnames")] public string Surnames { get; set; }
 
-    [JsonPropertyName("firstnames")]
-    public string Firstnames { get; set; }
+    [JsonPropertyName("firstnames")] public string Firstnames { get; set; }
 
-    [JsonPropertyName("title")]
-    public string Title { get; set; }
+    [JsonPropertyName("title")] public string Title { get; set; }
 
-    [JsonPropertyName("company")]
-    public string Company { get; set; }
+    [JsonPropertyName("company")] public string Company { get; set; }
 }
 
 // Full Models Incorporating Other Models
 public class MarketLocationMeasuringPointOperator
 {
-    [JsonPropertyName("marketPartnerId")]
-    public long MarketPartnerId { get; set; }
+    [JsonPropertyName("marketPartnerId")] public long MarketPartnerId { get; set; }
 
+    [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeFrom")]
     public DateTimeOffset ExecutionTimeFrom { get; set; }
 
+    [JsonConverter(typeof(NullableDateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeUntil")]
     public DateTimeOffset? ExecutionTimeUntil { get; set; }
 }
 
 public class MarketLocationNetworkOperator
 {
-    [JsonPropertyName("marketPartnerId")]
-    public long MarketPartnerId { get; set; }
+    [JsonPropertyName("marketPartnerId")] public long MarketPartnerId { get; set; }
 
+    [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeFrom")]
     public DateTimeOffset ExecutionTimeFrom { get; set; }
 
+    [JsonConverter(typeof(NullableDateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeUntil")]
     public DateTimeOffset? ExecutionTimeUntil { get; set; }
 }
@@ -193,33 +167,37 @@ public class MarketLocationProperties
     [JsonPropertyName("marketLocationProperty")]
     public MarketLocationProperty MarketLocationProperty { get; set; }
 
+    [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeFrom")]
     public DateTimeOffset ExecutionTimeFrom { get; set; }
 
+    [JsonConverter(typeof(NullableDateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeUntil")]
     public DateTimeOffset? ExecutionTimeUntil { get; set; }
 }
 
 public class MarketLocationSupplier
 {
-    [JsonPropertyName("marketPartnerId")]
-    public long MarketPartnerId { get; set; }
+    [JsonPropertyName("marketPartnerId")] public long MarketPartnerId { get; set; }
 
+    [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeFrom")]
     public DateTimeOffset ExecutionTimeFrom { get; set; }
 
+    [JsonConverter(typeof(NullableDateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeUntil")]
     public DateTimeOffset? ExecutionTimeUntil { get; set; }
 }
 
 public class MarketLocationTransmissionSystemOperator
 {
-    [JsonPropertyName("marketPartnerId")]
-    public long MarketPartnerId { get; set; }
+    [JsonPropertyName("marketPartnerId")] public long MarketPartnerId { get; set; }
 
+    [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeFrom")]
     public DateTimeOffset ExecutionTimeFrom { get; set; }
 
+    [JsonConverter(typeof(NullableDateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeUntil")]
     public DateTimeOffset? ExecutionTimeUntil { get; set; }
 }
@@ -234,11 +212,9 @@ public class ResultNegative
     [RegularExpression(@"A[A-Z\d]{2}")]
     public string ResponseCode { get; set; }
 
-    [JsonPropertyName("reason")]
-    public string Reason { get; set; }
+    [JsonPropertyName("reason")] public string Reason { get; set; }
 
-    [JsonPropertyName("networkOperator")]
-    public long? NetworkOperator { get; set; }
+    [JsonPropertyName("networkOperator")] public long? NetworkOperator { get; set; }
 }
 
 public class DataMarketLocation
@@ -247,8 +223,7 @@ public class DataMarketLocation
     [RegularExpression(@"\d{11}")]
     public string MaloId { get; set; }
 
-    [JsonPropertyName("energyDirection")]
-    public EnergyDirection EnergyDirection { get; set; }
+    [JsonPropertyName("energyDirection")] public EnergyDirection EnergyDirection { get; set; }
 
     [JsonPropertyName("measurementTechnologyClassification")]
     public MeasurementTechnologyClassification MeasurementTechnologyClassification { get; set; }
@@ -288,11 +263,9 @@ public class DataTranche
     [RegularExpression(@"\d{11}")]
     public string TranchenId { get; set; }
 
-    [JsonPropertyName("proportion")]
-    public Proportion Proportion { get; set; }
+    [JsonPropertyName("proportion")] public Proportion Proportion { get; set; }
 
-    [JsonPropertyName("percent")]
-    public float? Percent { get; set; }
+    [JsonPropertyName("percent")] public float? Percent { get; set; }
 
     [JsonPropertyName("dataTrancheSuppliers")]
     public List<MarketLocationSupplier> DataTrancheSuppliers { get; set; }
@@ -304,8 +277,7 @@ public class DataMeterLocation
     [RegularExpression(@"DE\d{11}[A-Z,\d]{20}")]
     public string MeloId { get; set; }
 
-    [JsonPropertyName("meterNumber")]
-    public string MeterNumber { get; set; }
+    [JsonPropertyName("meterNumber")] public string MeterNumber { get; set; }
 
     [JsonPropertyName("dataMeterLocationMeasuringPointOperators")]
     public List<MarketLocationMeasuringPointOperator> DataMeterLocationMeasuringPointOperators { get; set; }
@@ -343,8 +315,7 @@ public class ResultPositive
     [JsonPropertyName("dataMarketLocation")]
     public DataMarketLocation DataMarketLocation { get; set; }
 
-    [JsonPropertyName("dataTranches")]
-    public List<DataTranche> DataTranches { get; set; }
+    [JsonPropertyName("dataTranches")] public List<DataTranche> DataTranches { get; set; }
 
     [JsonPropertyName("dataMeterLocations")]
     public List<DataMeterLocation> DataMeterLocations { get; set; }

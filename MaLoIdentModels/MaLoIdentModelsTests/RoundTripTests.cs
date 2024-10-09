@@ -11,11 +11,12 @@ public class RoundTripTests
     [Fact]
     public void Test_Request()
     {
-        var settings = MaLoIdentModels.JsonSettings.GetJsonSerializerOptions();
-        var fileBody = System.IO.File.ReadAllText("examples/request.json");
-        var model = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(fileBody);
+        var settings = JsonSettings.GetJsonSerializerOptions();
+        var fileBody = File.ReadAllText("examples/request.json");
+        var model = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(fileBody, settings);
         model.Should().NotBeNull();
-        var reSererialized = System.Text.Json.JsonSerializer.Serialize(model);
+        var reSererialized = System.Text.Json.JsonSerializer.Serialize(model, settings);
+        Utilities.AssertJsonStringsAreEquivalent(fileBody, reSererialized);
         var deserialized = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(
             reSererialized
         );
@@ -25,11 +26,12 @@ public class RoundTripTests
     [Fact]
     public void Test_Positive_Result()
     {
-        var settings = MaLoIdentModels.JsonSettings.GetJsonSerializerOptions();
-        var fileBody = System.IO.File.ReadAllText("examples/result_positive.json");
+        var settings = JsonSettings.GetJsonSerializerOptions();
+        var fileBody = File.ReadAllText("examples/result_positive.json");
         var model = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(fileBody, settings);
         model.Should().NotBeNull();
         var reSererialized = System.Text.Json.JsonSerializer.Serialize(model, settings);
+        Utilities.AssertJsonStringsAreEquivalent(reSererialized, fileBody);
         var deserialized = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(
             reSererialized,
             settings
@@ -40,11 +42,12 @@ public class RoundTripTests
     [Fact]
     public void Test_Positive_Negative()
     {
-        var settings = MaLoIdentModels.JsonSettings.GetJsonSerializerOptions();
-        var fileBody = System.IO.File.ReadAllText("examples/result_negative.json");
+        var settings = JsonSettings.GetJsonSerializerOptions();
+        var fileBody = File.ReadAllText("examples/result_negative.json");
         var model = System.Text.Json.JsonSerializer.Deserialize<ResultNegative>(fileBody, settings);
         model.Should().NotBeNull();
         var reSererialized = System.Text.Json.JsonSerializer.Serialize(model, settings);
+        Utilities.AssertJsonStringsAreEquivalent(reSererialized, fileBody);
         var deserialized = System.Text.Json.JsonSerializer.Deserialize<ResultNegative>(
             reSererialized,
             settings
