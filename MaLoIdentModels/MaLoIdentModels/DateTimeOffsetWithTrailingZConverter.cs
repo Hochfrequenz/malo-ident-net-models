@@ -26,6 +26,6 @@ public class DateTimeOffsetWithTrailingZConverter : JsonConverter<DateTimeOffset
     )
     {
         // Always convert the DateTimeOffset to UTC and use the "Z" suffix
-        writer.WriteStringValue(value.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"));
+        writer.WriteStringValue(value.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:ssZ"));
     }
 }
