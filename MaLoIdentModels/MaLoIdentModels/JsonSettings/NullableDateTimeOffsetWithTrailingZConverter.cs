@@ -2,10 +2,10 @@ using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace MaLoIdentModels;
+namespace MaLoIdentModels.JsonSettings;
 
 /// <summary>
-/// Similar to <see cref="DateTimeOffsetWithTrailingZConverter"/> but for nullable DateTimeOffsets.
+/// Similar to <see cref="JsonSettings.DateTimeOffsetWithTrailingZConverter"/> but for nullable DateTimeOffsets.
 /// </summary>
 public class NullableDateTimeOffsetWithTrailingZConverter : JsonConverter<DateTimeOffset?>
 {

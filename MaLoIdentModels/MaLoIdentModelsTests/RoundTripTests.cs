@@ -1,5 +1,6 @@
 using FluentAssertions;
 using MaLoIdentModels;
+using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModelsTests;
 
@@ -25,15 +26,13 @@ public class RoundTripTests
     [Fact]
     public void Test_Positive_Result()
     {
-        var settings = JsonSettings.GetJsonSerializerOptions();
         var fileBody = File.ReadAllText("examples/result_positive.json");
-        var model = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(fileBody, settings);
+        var model = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(fileBody);
         model.Should().NotBeNull();
-        var reSererialized = System.Text.Json.JsonSerializer.Serialize(model, settings);
+        var reSererialized = System.Text.Json.JsonSerializer.Serialize(model);
         Utilities.AssertJsonStringsAreEquivalent(reSererialized, fileBody);
         var deserialized = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(
-            reSererialized,
-            settings
+            reSererialized
         );
         deserialized.Should().BeEquivalentTo(model);
     }

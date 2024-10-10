@@ -9,10 +9,11 @@ public class DataTranche
     public string? TranchenId { get; set; }
 
     [JsonPropertyName("proportion")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public Proportion Proportion { get; set; }
 
     [JsonPropertyName("percent")]
-    public double? Percent { get; set; }
+    public decimal? Percent { get; set; }
 
     [JsonPropertyName("dataTrancheSuppliers")]
     public List<TrancheSupplier>? DataTrancheSuppliers { get; set; }

@@ -2,7 +2,7 @@ using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace MaLoIdentModels;
+namespace MaLoIdentModels.JsonSettings;
 
 /// <summary>
 /// A JsonConverter that ensures, that we serialize DateTimeOffsets with the "Z" suffix as required by Edi@Enery.

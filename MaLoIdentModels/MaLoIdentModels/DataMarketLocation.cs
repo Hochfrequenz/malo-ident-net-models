@@ -9,11 +9,14 @@ public class DataMarketLocation
     public string? MaloId { get; set; }
 
     [JsonPropertyName("energyDirection")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public EnergyDirection EnergyDirection { get; set; }
 
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     [JsonPropertyName("measurementTechnologyClassification")]
     public MeasurementTechnologyClassification MeasurementTechnologyClassification { get; set; }
 
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     [JsonPropertyName("optionalChangeForecastBasis")]
     public OptionalChangeForecastBasis OptionalChangeForecastBasis { get; set; }
 

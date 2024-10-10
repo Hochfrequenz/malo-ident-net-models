@@ -3,6 +3,8 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels;
 
+using JsonSettings;
+
 public class MarketLocationTransmissionSystemOperator
 {
     [JsonPropertyName("marketPartnerId")]

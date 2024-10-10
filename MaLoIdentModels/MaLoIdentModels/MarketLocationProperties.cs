@@ -3,8 +3,11 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels;
 
+using JsonSettings;
+
 public class MarketLocationProperties
 {
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     [JsonPropertyName("marketLocationProperty")]
     public MarketLocationProperty MarketLocationProperty { get; set; }
 
