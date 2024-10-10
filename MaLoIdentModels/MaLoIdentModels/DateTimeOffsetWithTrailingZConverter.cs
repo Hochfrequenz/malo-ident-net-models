@@ -10,12 +10,20 @@ namespace MaLoIdentModels;
 /// </summary>
 public class DateTimeOffsetWithTrailingZConverter : JsonConverter<DateTimeOffset>
 {
-    public override DateTimeOffset Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override DateTimeOffset Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
     {
         return DateTimeOffset.Parse(reader.GetString()!);
     }
 
-    public override void Write(Utf8JsonWriter writer, DateTimeOffset value, JsonSerializerOptions options)
+    public override void Write(
+        Utf8JsonWriter writer,
+        DateTimeOffset value,
+        JsonSerializerOptions options
+    )
     {
         // Always convert the DateTimeOffset to UTC and use the "Z" suffix
         writer.WriteStringValue(value.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"));

@@ -2,7 +2,9 @@ using System.Text.Json;
 using System.Text.Json.JsonDiffPatch;
 using System.Text.Json.Nodes;
 using FluentAssertions;
+
 namespace MaLoIdentModelsTests;
+
 public static class Utilities
 {
     /// <summary>
@@ -20,5 +22,4 @@ public static class Utilities
         var diff = actualNode.Diff(expectedNode);
         diff.Should().BeNull();
     }
-    
 }

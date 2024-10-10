@@ -9,7 +9,11 @@ namespace MaLoIdentModels;
 /// </summary>
 public class NullableDateTimeOffsetWithTrailingZConverter : JsonConverter<DateTimeOffset?>
 {
-    public override DateTimeOffset? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override DateTimeOffset? Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
     {
         // Handle deserialization: if the value is null, return null
         if (reader.TokenType == JsonTokenType.Null)
@@ -21,7 +25,11 @@ public class NullableDateTimeOffsetWithTrailingZConverter : JsonConverter<DateTi
         return DateTimeOffset.Parse(reader.GetString()!);
     }
 
-    public override void Write(Utf8JsonWriter writer, DateTimeOffset? value, JsonSerializerOptions options)
+    public override void Write(
+        Utf8JsonWriter writer,
+        DateTimeOffset? value,
+        JsonSerializerOptions options
+    )
     {
         if (value.HasValue)
         {
