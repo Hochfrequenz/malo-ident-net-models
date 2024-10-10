@@ -40,15 +40,13 @@ public class RoundTripTests
     [Fact]
     public void Test_Positive_Negative()
     {
-        var settings = JsonSettings.GetJsonSerializerOptions();
         var fileBody = File.ReadAllText("examples/result_negative.json");
-        var model = System.Text.Json.JsonSerializer.Deserialize<ResultNegative>(fileBody, settings);
+        var model = System.Text.Json.JsonSerializer.Deserialize<ResultNegative>(fileBody);
         model.Should().NotBeNull();
-        var reSererialized = System.Text.Json.JsonSerializer.Serialize(model, settings);
+        var reSererialized = System.Text.Json.JsonSerializer.Serialize(model);
         Utilities.AssertJsonStringsAreEquivalent(reSererialized, fileBody);
         var deserialized = System.Text.Json.JsonSerializer.Deserialize<ResultNegative>(
-            reSererialized,
-            settings
+            reSererialized
         );
         deserialized.Should().BeEquivalentTo(model);
     }
@@ -56,7 +54,7 @@ public class RoundTripTests
     [Fact]
     public void Test_README_Example()
     {
-        var myNegativeResponse = new ResultNegative()
+        var myNegativeResponse = new ResultNegative
         {
             DecisionTree = "E_0594",
             ResponseCode = "A10",
