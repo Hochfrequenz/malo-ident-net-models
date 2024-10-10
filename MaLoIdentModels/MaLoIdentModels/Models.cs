@@ -120,6 +120,9 @@ public class MarketLocationDateTime
 
 public class IdentificationParameter
 {
+    [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
+    [JsonPropertyName("identificationDateTime")]
+    public DateTimeOffset IdentificationDateTime { get; set; }
     [JsonPropertyName("maloId")]
     [RegularExpression(@"\d{11}")]
     public string MaloId { get; set; }
