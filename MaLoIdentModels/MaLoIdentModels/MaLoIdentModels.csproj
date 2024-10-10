@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
         <LangVersion>13</LangVersion>
         <Nullable>enable</Nullable>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
@@ -10,6 +9,7 @@
         <PackageProjectUrl>https://github.com/Hochfrequenz/malo-ident-net-models/</PackageProjectUrl>
         <license>MIT</license>
         <RepositoryUrl>https://github.com/Hochfrequenz/malo-ident-net-models/</RepositoryUrl>
+        <TargetFrameworks>netstandard2.1;net8.0;net9.0</TargetFrameworks>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
