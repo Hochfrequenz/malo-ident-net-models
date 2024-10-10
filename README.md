@@ -48,7 +48,7 @@ You are very welcome to contribute to this template repository by opening a pull
 
 ## Hochfrequenz
 
-[Hochfrequenz Unternehmensberatung GmbH](https://www.hochfrequenz.de) is a consulting company with offices in Berlin, Leipzig, Köln and Bremen. 
+[Hochfrequenz Unternehmensberatung GmbH](https://www.hochfrequenz.de) is a consulting company with offices in Berlin, Leipzig, Köln and Bremen.
 We're not only the main contributor to open source in the field of German utilities but, according to [Kununu ratings](https://www.kununu.com/de/hochfrequenz-unternehmensberatung1), also among the most attractive employers within the German energy market.
 Applications of talented developers are welcome at any time!
 Please consider visiting our [career page](https://www.hochfrequenz.de/index.php/karriere/aktuelle-stellenausschreibungen/full-stack-entwickler) (German only).
