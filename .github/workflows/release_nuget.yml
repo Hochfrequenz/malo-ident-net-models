@@ -22,7 +22,7 @@ jobs:
   push_release:
     needs: run_tests
     if: startsWith(github.ref, 'refs/tags/v')
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
     steps:
@@ -41,12 +41,9 @@ jobs:
       - name: Create Package MaLoIdentModels (dotnet pack)
         working-directory: "MaLoIdentModels/MaLoIdentModels"
         run: dotnet pack MaLoIdentModels.csproj --configuration Release -p:PackageVersion="${{ steps.tagTBC.outputs.tag }}"
-      - name: Setup Nuget.exe
-        uses: warrenbuckley/Setup-Nuget@v1
       - name: Nuget push MaLoIdentModels
         working-directory: "MaLoIdentModels/MaLoIdentModels"
         # token: https://github.com/Hochfrequenz/MaLoIdentModels/settings/secrets/actions/NUGET_ORG_PUSH_TOKEN
         # expires 2025-09-27; token is owned by konstantin as of now.
         run: |
-          nuget setApiKey ${{ secrets.NUGET_ORG_PUSH_TOKEN }}
-          nuget push .\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -NoSymbols
+          dotnet nuget push ./bin/Release/*.nupkg --api-key ${{ secrets.NUGET_ORG_PUSH_TOKEN }} --source https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols
