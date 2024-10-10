@@ -11,14 +11,10 @@ public class RoundTripTests
     [Fact]
     public void Test_Request()
     {
-        var settings = JsonSettings.GetJsonSerializerOptions();
         var fileBody = File.ReadAllText("examples/request.json");
-        var model = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(
-            fileBody,
-            settings
-        );
+        var model = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(fileBody);
         model.Should().NotBeNull();
-        var reSererialized = System.Text.Json.JsonSerializer.Serialize(model, settings);
+        var reSererialized = System.Text.Json.JsonSerializer.Serialize(model);
         Utilities.AssertJsonStringsAreEquivalent(fileBody, reSererialized);
         var deserialized = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(
             reSererialized
