@@ -1,7 +1,8 @@
 using System.Text.Json;
-
-namespace MaLoIdentModelsTests;
+using System.Text.Json.JsonDiffPatch;
+using System.Text.Json.Nodes;
 using FluentAssertions;
+namespace MaLoIdentModelsTests;
 public static class Utilities
 {
     /// <summary>
@@ -14,11 +15,10 @@ public static class Utilities
     /// <param name="expected"></param>
     public static void AssertJsonStringsAreEquivalent(string actual, string expected)
     {
-        using var actualJsonDocument = JsonDocument.Parse(actual);
-        using var expectedJsonDocument = JsonDocument.Parse(expected);
-        
-        // Use Fluent Assertions to compare the objects
-        actualJsonDocument.Should().BeEquivalentTo(expectedJsonDocument);
+        var expectedNode = JsonNode.Parse(expected);
+        var actualNode = JsonNode.Parse(actual);
+        var diff = actualNode.Diff(expectedNode);
+        diff.Should().BeNull();
     }
     
 }
