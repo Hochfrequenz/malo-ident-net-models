@@ -50,4 +50,4 @@ jobs:
         env:
           NUGET_ORG_PUSH_TOKEN: ${{ secrets.NUGET_ORG_PUSH_TOKEN }}
         run: |
-          dotnet nuget push ./bin/Release/*.nupkg --api-key $NUGET_ORG_PUSH_TOKEN -Source https://api.nuget.org/v3/index.json -SkipDuplicate -NoSymbols
+          dotnet nuget push ./bin/Release/*.nupkg --api-key $NUGET_ORG_PUSH_TOKEN --source https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols
