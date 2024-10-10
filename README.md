@@ -4,6 +4,7 @@
 # MaLo Ident .NET Models
 
 This repository contains the nuget package `MaLoIdentModels` which contains C# model classes with `System.Text.Json` attributes for the Marktlokation Identification API by EDI@Energy.
+It (de)serializes model classes to 100% as required by EDI@Energy (this includes datetimes and enums), but provides you as a developer with strongly typed models instead of stringly typed properties that you'd have to deal with. if you used the offical OpenApi spec.
 
 ## Installation and Use
 
