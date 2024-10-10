@@ -47,6 +47,7 @@ jobs:
         working-directory: "MaLoIdentModels/MaLoIdentModels"
         # token: https://github.com/Hochfrequenz/MaLoIdentModels/settings/secrets/actions/NUGET_ORG_PUSH_TOKEN
         # expires 2025-09-27; token is owned by konstantin as of now.
+        env:
+          NUGET_ORG_PUSH_TOKEN: ${{ secrets.NUGET_ORG_PUSH_TOKEN }}
         run: |
-          nuget setApiKey ${{ secrets.NUGET_ORG_PUSH_TOKEN }}
-          nuget push .\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -NoSymbols
+          dotnet nuget push ./bin/Release/*.nupkg --api-key $NUGET_ORG_PUSH_TOKEN --source https://api.nuget.org/v3/index.json --skip-duplicate
