@@ -31,7 +31,7 @@
     <ItemGroup>
       <Content Include=".config\dotnet-tools.json" />
     </ItemGroup>
-    <Target Name="CopyReadme" BeforeTargets="Pack">
-        <Copy SourceFiles="../../README.md" DestinationFolder="$(OutputPath)" />
-    </Target>
+    <ItemGroup>
+        <None Include="../../README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
 </Project>
