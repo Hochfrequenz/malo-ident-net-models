@@ -32,6 +32,6 @@
       <Content Include=".config\dotnet-tools.json" />
     </ItemGroup>
     <ItemGroup>
-        <None Include="../../README.md" Pack="true" PackagePath="\"/>
+        <None Include="README.md" Pack="true" PackagePath="\"/> <!-- copied to here during the release github action -->
     </ItemGroup>
 </Project>
