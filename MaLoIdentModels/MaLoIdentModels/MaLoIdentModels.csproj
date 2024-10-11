@@ -10,6 +10,7 @@
         <license>MIT</license>
         <RepositoryUrl>https://github.com/Hochfrequenz/malo-ident-net-models/</RepositoryUrl>
         <TargetFrameworks>netstandard2.1;net8.0;net9.0</TargetFrameworks>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -30,5 +31,7 @@
     <ItemGroup>
       <Content Include=".config\dotnet-tools.json" />
     </ItemGroup>
-
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/> <!-- copied to here during the release github action -->
+    </ItemGroup>
 </Project>

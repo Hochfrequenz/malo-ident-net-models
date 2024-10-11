@@ -35,6 +35,8 @@ jobs:
         id: tagTBC
         with:
           tagRegex: "v(\\d+\\.\\d+\\.\\d+)"
+      - name: copy README.md to package folder
+        run: cp README.md MaLoIdentModels/MaLoIdentModels/README.md
       - name: Build/Check for compile errors (dotnet build)
         working-directory: "MaLoIdentModels"
         run: dotnet build --configuration Release
