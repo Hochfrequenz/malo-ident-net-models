@@ -1,6 +1,5 @@
 using FluentAssertions;
 using MaLoIdentModels;
-using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModelsTests;
 
