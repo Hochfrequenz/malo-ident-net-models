@@ -1,10 +1,15 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels;
 
 public class IdentificationParameterIdentificationParameterId
 {
+    [JsonIgnore]
+    [Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("maloId")]
     public string? MaloId { get; set; }
 

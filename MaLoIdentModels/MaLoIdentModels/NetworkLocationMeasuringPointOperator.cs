@@ -7,6 +7,10 @@ using JsonSettings;
 
 public class NetworkLocationMeasuringPointOperator
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public Guid? Id { get; set; }
+
     [JsonPropertyName("marketPartnerId")]
     public long MarketPartnerId { get; set; }
 

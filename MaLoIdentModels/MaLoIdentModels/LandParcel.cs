@@ -4,6 +4,10 @@ namespace MaLoIdentModels;
 
 public class LandParcel
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("districtName")]
     public string? DistrictName { get; set; }
 

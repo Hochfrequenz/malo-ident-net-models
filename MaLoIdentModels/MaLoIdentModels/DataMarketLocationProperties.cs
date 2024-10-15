@@ -6,6 +6,10 @@ namespace MaLoIdentModels;
 
 public class DataMarketLocationProperties
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public Guid? Id { get; set; }
+
     [JsonPropertyName("marketLocationProperty")]
     public MarketLocationProperty MarketLocationProperty { get; set; }
 

@@ -7,6 +7,10 @@ namespace MaLoIdentModels;
 
 public class MarketLocationDateTime
 {
+    [JsonIgnore]
+    [Key]
+    public Guid? Id { get; set; }
+
     [JsonPropertyName("maloId")]
     [RegularExpression(@"\d{11}")]
     public string? MaloId { get; set; }

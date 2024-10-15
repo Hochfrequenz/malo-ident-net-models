@@ -5,6 +5,10 @@ using System.Text.Json.Serialization;
 
 public class Address
 {
+    [JsonIgnore]
+    [Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("countryCode")]
     [RegularExpression(@"[A-Z]{2}")]
     public string? CountryCode { get; set; }

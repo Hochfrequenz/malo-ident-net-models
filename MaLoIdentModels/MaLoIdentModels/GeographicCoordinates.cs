@@ -4,6 +4,10 @@ namespace MaLoIdentModels;
 
 public class GeographicCoordinates
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("latitude")]
     public string? Latitude { get; set; }
 
