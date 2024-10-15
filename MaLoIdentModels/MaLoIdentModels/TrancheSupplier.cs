@@ -7,7 +7,7 @@ public class TrancheSupplier
 {
     [JsonIgnore]
     [System.ComponentModel.DataAnnotations.Key]
-    public System.Guid? Id { get; set; }
+    public Guid? Id { get; set; }
 
     [JsonPropertyName("marketPartnerId")]
     public long MarketPartnerId { get; set; }

@@ -6,7 +6,7 @@ namespace MaLoIdentModels;
 public class ResultNegative
 {
     [JsonIgnore]
-    [System.ComponentModel.DataAnnotations.Key]
+    [Key]
     public System.Guid? Id { get; set; }
 
     [JsonPropertyName("decisionTree")]

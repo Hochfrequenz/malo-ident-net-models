@@ -7,7 +7,7 @@ namespace MaLoIdentModels;
 public class ResultPositive
 {
     [JsonIgnore]
-    [System.ComponentModel.DataAnnotations.Key]
+    [Key]
     public System.Guid? Id { get; set; }
 
     [JsonPropertyName("dataMarketLocation")]

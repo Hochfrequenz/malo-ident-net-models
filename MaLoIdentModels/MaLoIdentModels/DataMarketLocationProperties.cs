@@ -8,7 +8,7 @@ public class DataMarketLocationProperties
 {
     [JsonIgnore]
     [System.ComponentModel.DataAnnotations.Key]
-    public System.Guid? Id { get; set; }
+    public Guid? Id { get; set; }
 
     [JsonPropertyName("marketLocationProperty")]
     public MarketLocationProperty MarketLocationProperty { get; set; }

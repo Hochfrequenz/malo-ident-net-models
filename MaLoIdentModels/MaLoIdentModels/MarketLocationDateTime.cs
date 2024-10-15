@@ -8,8 +8,8 @@ namespace MaLoIdentModels;
 public class MarketLocationDateTime
 {
     [JsonIgnore]
-    [System.ComponentModel.DataAnnotations.Key]
-    public System.Guid? Id { get; set; }
+    [Key]
+    public Guid? Id { get; set; }
 
     [JsonPropertyName("maloId")]
     [RegularExpression(@"\d{11}")]
