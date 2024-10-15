@@ -6,6 +6,10 @@ namespace MaLoIdentModels;
 
 public class IdentificationParameter
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public System.Guid? Id { get; set; }
+
     [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("identificationDateTime")]
     public DateTimeOffset IdentificationDateTime { get; set; }

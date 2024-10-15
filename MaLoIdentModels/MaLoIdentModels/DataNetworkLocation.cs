@@ -5,6 +5,10 @@ namespace MaLoIdentModels;
 
 public class DataNetworkLocation
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("neloId")]
     public string? NeloId { get; set; }
 

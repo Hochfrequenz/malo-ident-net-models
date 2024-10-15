@@ -4,6 +4,10 @@ namespace MaLoIdentModels;
 
 public class Name
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("surnames")]
     public string? Surnames { get; set; }
 

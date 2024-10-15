@@ -5,6 +5,10 @@ namespace MaLoIdentModels;
 
 public class ResultNegative
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("decisionTree")]
     [RegularExpression(@"E_\d{4}")]
     public string? DecisionTree { get; set; }

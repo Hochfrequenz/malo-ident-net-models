@@ -7,6 +7,10 @@ using JsonSettings;
 
 public class MarketLocationTransmissionSystemOperator
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("marketPartnerId")]
     public long MarketPartnerId { get; set; }
 

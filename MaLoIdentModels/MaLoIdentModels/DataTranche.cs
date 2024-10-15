@@ -5,6 +5,10 @@ namespace MaLoIdentModels;
 
 public class DataTranche
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("tranchenId")]
     public string? TranchenId { get; set; }
 

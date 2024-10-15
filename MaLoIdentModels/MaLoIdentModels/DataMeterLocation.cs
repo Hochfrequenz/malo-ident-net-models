@@ -5,6 +5,10 @@ namespace MaLoIdentModels;
 
 public class DataMeterLocation
 {
+    [JsonIgnore]
+    [System.ComponentModel.DataAnnotations.Key]
+    public System.Guid? Id { get; set; }
+
     [JsonPropertyName("meloId")]
     public string? MeloId { get; set; }
 
