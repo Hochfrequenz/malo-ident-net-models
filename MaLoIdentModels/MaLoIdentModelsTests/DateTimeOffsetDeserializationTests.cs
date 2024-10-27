@@ -51,6 +51,7 @@ public class DateTimeOffsetDeserializationTests
     [InlineData("2023-08-02T22:00:00Z")]
     [InlineData("2023-08-02T22:00:00+00:00")]
     [InlineData("2023-08-03T00:00:00+02:00")]
+    [InlineData("2023-08-02T20:00:00-02:00")]
     [InlineData("2023-08-03T00:00:00.000+02:00")]
     [InlineData("2023-08-03T00:00:00.000000+02:00")]
     public void Deserializing_An_DatetimeOffset_With_Explicit_Offset_Works(
