@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -20,9 +21,8 @@ public class NullableDateTimeOffsetWithTrailingZConverter : JsonConverter<DateTi
         {
             return null;
         }
-
-        // Parse the input string to a DateTimeOffset
-        return DateTimeOffset.Parse(reader.GetString()!);
+        var dateTimeString = reader.GetString()!;
+        return dateTimeString.ToDateTimeOffset();
     }
 
     public override void Write(

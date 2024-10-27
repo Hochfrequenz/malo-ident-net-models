@@ -14,6 +14,9 @@ public class RoundTripTests
         var fileBody = File.ReadAllText("examples/request.json");
         var model = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(fileBody);
         model.Should().NotBeNull();
+        {
+            model!.IdentificationDateTime.Offset.Should().Be(TimeSpan.Zero);
+        }
         var reSererialized = System.Text.Json.JsonSerializer.Serialize(model);
         Utilities.AssertJsonStringsAreEquivalent(fileBody, reSererialized);
         var deserialized = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(
