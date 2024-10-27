@@ -29,7 +29,7 @@ internal static class DateTimeOffsetStringExtensionMethods
     /// because the actual parsing happens with regular DateTime parsing.
     /// </remarks>
     private static readonly Regex EndsWithOffsetPattern = new(
-        @"^.+[\+\-]\d{1,2}(?::\d{2})?$"
+        @"^.+[\+\-]\d{1,2}:\d{2}$"
     );
 
     /// <summary>
