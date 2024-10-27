@@ -28,7 +28,7 @@ internal static class DateTimeOffsetStringExtensionMethods
     /// Note that this isn't super strict, e.g. '+17:99' would also pass, but that's fine,
     /// because the actual parsing happens with regular DateTime parsing.
     /// </remarks>
-    private static readonly Regex EndsWithOffsetPattern = new Regex(
+    private static readonly Regex EndsWithOffsetPattern = new(
         @"^.+[\+\-]\d{1,2}(?::\d{2})?$"
     );
 
@@ -58,7 +58,7 @@ internal static class DateTimeOffsetStringExtensionMethods
         )
         {
             throw new JsonException(
-                "DateTimeOffset value must have an explicit offset, like 'Z' or '+/-HH:mm'."
+                $"DateTimeOffset value must match any of the supported formats: {string.Join(", ", SupportedFormats)}, but '{dtoString}' doesn't"
             );
         }
 
