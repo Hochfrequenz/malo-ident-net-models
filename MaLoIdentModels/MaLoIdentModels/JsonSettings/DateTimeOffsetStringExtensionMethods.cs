@@ -28,9 +28,7 @@ internal static class DateTimeOffsetStringExtensionMethods
     /// Note that this isn't super strict, e.g. '+17:99' would also pass, but that's fine,
     /// because the actual parsing happens with regular DateTime parsing.
     /// </remarks>
-    private static readonly Regex EndsWithOffsetPattern = new(
-        @"^.+[\+\-]\d{1,2}:\d{2}$"
-    );
+    private static readonly Regex EndsWithOffsetPattern = new(@"^.+[\+\-]\d{1,2}:\d{2}$");
 
     /// <summary>
     /// converts the given <paramref name="dtoString"/> to an datetimeoffset
