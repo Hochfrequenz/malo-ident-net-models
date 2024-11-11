@@ -34,6 +34,7 @@ Console.Out.WriteLine(myJson);
 ```
 
 ### Versioning
+
 For each major version of the OpenAPI spec, a new namespace is created.
 The version which is valid from April 2025 onwards is `v1`.
 
