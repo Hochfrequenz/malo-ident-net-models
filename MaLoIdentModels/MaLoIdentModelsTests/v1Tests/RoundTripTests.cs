@@ -11,7 +11,7 @@ public class RoundTripTests
     [Fact]
     public void Test_Request()
     {
-        var fileBody = File.ReadAllText("examples/request.json");
+        var fileBody = File.ReadAllText("v1Tests/examples/request.json");
         var model = System.Text.Json.JsonSerializer.Deserialize<IdentificationParameter>(fileBody);
         model.Should().NotBeNull();
         {
@@ -28,7 +28,7 @@ public class RoundTripTests
     [Fact]
     public void Test_Positive_Result()
     {
-        var fileBody = File.ReadAllText("examples/result_positive.json");
+        var fileBody = File.ReadAllText("v1Tests/examples/result_positive.json");
         var model = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(fileBody);
         model.Should().NotBeNull();
         var reSererialized = System.Text.Json.JsonSerializer.Serialize(model);
@@ -42,7 +42,7 @@ public class RoundTripTests
     [Fact]
     public void Test_Positive_Negative()
     {
-        var fileBody = File.ReadAllText("examples/result_negative.json");
+        var fileBody = File.ReadAllText("v1Tests/examples/result_negative.json");
         var model = System.Text.Json.JsonSerializer.Deserialize<ResultNegative>(fileBody);
         model.Should().NotBeNull();
         var reSererialized = System.Text.Json.JsonSerializer.Serialize(model);

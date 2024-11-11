@@ -21,7 +21,7 @@ public class DateTimeOffsetDeserializationTests
         string invalidDateTimeOffsetString
     )
     {
-        var fileBody = File.ReadAllText("examples/request.json");
+        var fileBody = File.ReadAllText("v1Tests/examples/request.json");
         fileBody
             .Should()
             .Contain(
@@ -58,7 +58,7 @@ public class DateTimeOffsetDeserializationTests
         string dateTimeOffsetString
     )
     {
-        var fileBody = File.ReadAllText("examples/request.json");
+        var fileBody = File.ReadAllText("v1Tests/examples/request.json");
         fileBody
             .Should()
             .Contain(
