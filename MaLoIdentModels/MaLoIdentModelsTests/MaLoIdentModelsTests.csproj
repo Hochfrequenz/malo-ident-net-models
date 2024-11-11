@@ -23,13 +23,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="examples\request.json">
+      <None Update="v1Tests\examples\request.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="examples\result_negative.json">
+      <None Update="v1Tests\examples\result_negative.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="examples\result_positive.json">
+      <None Update="v1Tests\examples\result_positive.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>
