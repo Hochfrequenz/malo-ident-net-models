@@ -12,7 +12,7 @@ public class GeographicCoordinates
     [JsonConverter(typeof(EmptyStringConverter))]
     [JsonPropertyName("latitude")]
     public string? Latitude { get; set; }
-    
+
     [JsonConverter(typeof(EmptyStringConverter))]
     [JsonPropertyName("longitude")]
     public string? Longitude { get; set; }
@@ -24,7 +24,7 @@ public class GeographicCoordinates
     [JsonConverter(typeof(EmptyStringConverter))]
     [JsonPropertyName("north")]
     public string? North { get; set; }
-    
+
     [JsonConverter(typeof(JsonStringEnumConverter))]
     [JsonPropertyName("zone")]
     public Zone? Zone { get; set; }

@@ -33,5 +33,6 @@ public class EmptyStringAndObjectsDeserializationTests
         deserializedModel
             .IdentificationParameterAddress.GeographicCoordinates.North.Should()
             .BeNull();
+        deserializedModel.IdentificationParameterAddress.LandParcels.Should().BeNull();
     }
 }
