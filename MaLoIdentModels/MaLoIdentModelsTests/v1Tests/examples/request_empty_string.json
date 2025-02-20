@@ -31,8 +31,8 @@
       }
     ],
     "geographicCoordinates": {
-      "latitude": "",
-      "longitude": "",
+      "latitude": "string",
+      "longitude": "string",
       "east": "",
       "north": "",
       "zone": "UTMZone31",
