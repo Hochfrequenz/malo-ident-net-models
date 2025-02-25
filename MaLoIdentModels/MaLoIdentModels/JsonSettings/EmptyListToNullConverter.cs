@@ -40,6 +40,11 @@ public class EmptyListToNullConverter<T> : JsonConverter<List<T>>
 
     private bool IsEmptyModel(T model)
     {
+        if (model is string str)
+        {
+            return string.IsNullOrEmpty(str);
+        }
+
         return typeof(T)
             .GetProperties()
             .All(property =>
