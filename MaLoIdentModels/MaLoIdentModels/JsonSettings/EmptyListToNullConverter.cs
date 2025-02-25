@@ -42,7 +42,7 @@ public class EmptyListToNullConverter<T> : JsonConverter<List<T>>
     {
         if (model is string str)
         {
-            return string.IsNullOrEmpty(str);
+            return string.IsNullOrWhiteSpace(str);
         }
 
         return typeof(T)
