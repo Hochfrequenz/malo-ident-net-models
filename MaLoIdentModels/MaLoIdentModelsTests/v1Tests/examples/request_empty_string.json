@@ -3,7 +3,7 @@
   "energyDirection": "consumption",
   "identificationParameterId": {
     "maloId": "57685676748",
-    "tranchenIds": ["57685676742"],
+    "tranchenIds": [],
     "meloIds": ["DE00014545768S0000000000000003054"],
     "meterNumbers": ["1SM-8465929523"],
     "customerNumber": "V567345345"
