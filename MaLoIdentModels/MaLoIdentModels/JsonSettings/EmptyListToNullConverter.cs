@@ -52,10 +52,25 @@ public class EmptyListToNullConverter<T> : JsonConverter<List<T>>
         bool allChildPropertiesAreDefault = typeof(T)
             .GetProperties()
             .All(property =>
-                property.PropertyType == typeof(string)
-                    && ((string?)property.GetValue(model))?.Trim() == string.Empty
-                || property.GetValue(model) == null
-            );
+            {
+                var value = property.GetValue(model);
+                if (property.PropertyType == typeof(string))
+                {
+                    return string.IsNullOrWhiteSpace((string?)value);
+                }
+                if (value == null)
+                {
+                    return true;
+                }
+                var propertyType = property.PropertyType;
+                if (propertyType.IsClass || (propertyType.IsValueType && !propertyType.IsPrimitive))
+                {
+                    var method = typeof(EmptyListToNullConverter<T>).GetMethod(nameof(IsEmptyModel), System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                    var genericMethod = method?.MakeGenericMethod(propertyType);
+                    return (bool?)genericMethod?.Invoke(this, new[] { value }) ?? false;
+                }
+                return false;
+            });
 
         return allChildPropertiesAreDefault;
     }
