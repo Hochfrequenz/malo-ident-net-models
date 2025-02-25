@@ -6,6 +6,10 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels.JsonSettings;
 
+/// <summary>
+/// A custom JSON converter for lists that converts empty lists or lists with all empty models to null.
+/// </summary>
+/// <typeparam name="T">The type of elements in the list.</typeparam>
 public class EmptyListToNullConverter<T> : JsonConverter<List<T>>
 {
     public override List<T>? Read(
