@@ -21,26 +21,37 @@ public class EmptyStringAndObjectsDeserializationTests
         deserializedModel.Should().NotBeNull();
         deserializedModel.IdentificationParameterId.Should().NotBeNull();
         deserializedModel.IdentificationParameterAddress.Should().NotBeNull();
-        // the field tranchenIds is an empty list in the test data and should therefore be null after deserializing
-        deserializedModel.IdentificationParameterId.TranchenIds.Should().BeNull();
-        // Landparcels should be null, because in the test data the fields of all objects in this list,
-        // are empty strings
-        deserializedModel.IdentificationParameterAddress.LandParcels.Should().BeNull();
+        deserializedModel
+            .IdentificationParameterId.TranchenIds.Should()
+            .BeNull(
+                because: "the field tranchenIds is an empty list in the test data and should therefore be null after deserializing"
+            );
+        deserializedModel
+            .IdentificationParameterAddress.LandParcels.Should()
+            .BeNull(
+                because: "Landparcels should be null, because in the test data the fields of all objects in this list, are empty strings"
+            );
         deserializedModel.IdentificationParameterAddress.GeographicCoordinates.Should().NotBeNull();
-        // the following fields of the geographic coordinates object should be null, because in the test data the fields
-        // are empty strings
         deserializedModel
             .IdentificationParameterAddress.GeographicCoordinates.Easting.Should()
-            .BeNull();
+            .BeNull(
+                because: "the fields of the geographic coordinates object should be null, because in the test data the fields are empty strings"
+            );
         deserializedModel
             .IdentificationParameterAddress.GeographicCoordinates.Northing.Should()
-            .BeNull();
+            .BeNull(
+                because: "the fields of the geographic coordinates object should be null, because in the test data the fields are empty strings"
+            );
         deserializedModel
             .IdentificationParameterAddress.GeographicCoordinates.East.Should()
-            .BeNull();
+            .BeNull(
+                because: "the fields of the geographic coordinates object should be null, because in the test data the fields are empty strings"
+            );
         deserializedModel
             .IdentificationParameterAddress.GeographicCoordinates.North.Should()
-            .BeNull();
+            .BeNull(
+                "the fields of the geographic coordinates object should be null, because in the test data the fields are empty strings"
+            );
         deserializedModel.IdentificationParameterAddress.LandParcels.Should().BeNull();
     }
 }
