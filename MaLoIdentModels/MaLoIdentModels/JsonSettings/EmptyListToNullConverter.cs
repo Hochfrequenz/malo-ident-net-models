@@ -49,12 +49,14 @@ public class EmptyListToNullConverter<T> : JsonConverter<List<T>>
             return string.IsNullOrWhiteSpace(str);
         }
 
-        return typeof(T)
+        bool allChildPropertiesAreDefault = typeof(T)
             .GetProperties()
             .All(property =>
                 property.PropertyType == typeof(string)
                     && ((string?)property.GetValue(model))?.Trim() == string.Empty
                 || property.GetValue(model) == null
             );
+
+        return allChildPropertiesAreDefault;
     }
 }
