@@ -49,7 +49,7 @@ public class EmptyListToNullConverter<T> : JsonConverter<List<T>>
             .GetProperties()
             .All(property =>
                 property.PropertyType == typeof(string)
-                    && (string?)property.GetValue(model) == string.Empty
+                    && ((string?)property.GetValue(model))?.Strip() == string.Empty
                 || property.GetValue(model) == null
             );
     }
