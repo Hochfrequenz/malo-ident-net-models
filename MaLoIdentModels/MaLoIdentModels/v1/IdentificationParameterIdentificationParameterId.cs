@@ -27,7 +27,7 @@ public class IdentificationParameterIdentificationParameterId
     [JsonPropertyName("meterNumbers")]
     public List<string>? MeterNumbers { get; set; }
 
-    [JsonConverter(typeof(EmptyListToNullConverter<string>))]
+    [JsonConverter(typeof(EmptyStringConverter))]
     [JsonPropertyName("customerNumber")]
     public string? CustomerNumber { get; set; }
 }
