@@ -65,7 +65,11 @@ public class EmptyListToNullConverter<T> : JsonConverter<List<T>>
                 var propertyType = property.PropertyType;
                 if (propertyType.IsClass || (propertyType.IsValueType && !propertyType.IsPrimitive))
                 {
-                    var method = typeof(EmptyListToNullConverter<T>).GetMethod(nameof(IsEmptyModel), System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                    var method = typeof(EmptyListToNullConverter<T>).GetMethod(
+                        nameof(IsEmptyModel),
+                        System.Reflection.BindingFlags.NonPublic
+                            | System.Reflection.BindingFlags.Instance
+                    );
                     var genericMethod = method?.MakeGenericMethod(propertyType);
                     return (bool?)genericMethod?.Invoke(this, new[] { value }) ?? false;
                 }
