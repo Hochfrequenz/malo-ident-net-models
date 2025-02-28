@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModels.v1;
 
@@ -15,6 +16,7 @@ public class IdentificationParameterIdentificationParameterAddress
     [JsonPropertyName("address")]
     public Address? Address { get; set; }
 
+    [JsonConverter(typeof(EmptyListToNullConverter<LandParcel>))]
     [JsonPropertyName("landParcels")]
     public List<LandParcel>? LandParcels { get; set; }
 

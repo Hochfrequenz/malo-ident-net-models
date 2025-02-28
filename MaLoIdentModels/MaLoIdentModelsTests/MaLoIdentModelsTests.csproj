@@ -32,6 +32,9 @@
       <None Update="v1Tests\examples\result_positive.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+        <None Update="v1Tests\examples\request_empty_string.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
