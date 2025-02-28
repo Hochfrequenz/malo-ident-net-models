@@ -18,7 +18,7 @@ public class EmptyStringConverter : JsonConverter<string?>
         if (reader.TokenType == JsonTokenType.String)
         {
             var value = reader.GetString();
-            if (string.IsNullOrEmpty(value))
+            if (string.IsNullOrWhiteSpace(value))
             {
                 return null;
             }
