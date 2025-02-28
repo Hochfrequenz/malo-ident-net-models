@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace MaLoIdentModels.JsonSettings;
 
 /// <summary>
-/// A custom JSON converter that converts empty strings to null and writes null values as empty strings.
+/// A custom JSON converter that converts empty strings to null and writes empty strings as null values.
 /// </summary>
 public class EmptyStringConverter : JsonConverter<string?>
 {
