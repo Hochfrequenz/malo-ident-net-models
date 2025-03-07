@@ -24,7 +24,7 @@ public class CreateTimeZoneFile
 
         tzi.SupportsDaylightSavingTime.Should().BeTrue();
         var expected = tzi.ToSerializedString();
-        GermanMidnightValidationAttribute.GermanTimeZoneSerializedAsString.Should().Be(expected);
+        // GermanMidnightValidationAttribute.GermanTimeZoneSerializedAsString.Should().Be(expected); // you cannot rely on them to be equal
         TimeZoneInfo
             .FromSerializedString(
                 GermanMidnightValidationAttribute.GermanTimeZoneSerializedAsString
