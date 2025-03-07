@@ -4,7 +4,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 /// <summary>
-/// an attribute that checks that a datetimeoffset is 00:00 Uhr in German local time
+/// An attribute that checks that a DateTimeOffset is 00:00 (midnight) in German local time
 /// </summary>
 public class GermanMidnightValidationAttribute : ValidationAttribute
 {
