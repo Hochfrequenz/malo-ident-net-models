@@ -80,4 +80,36 @@ public class DateTimeOffsetDeserializationTests
             .IdentificationDateTime.Should()
             .Be(new DateTimeOffset(2023, 8, 2, 22, 0, 0, 0, TimeSpan.Zero));
     }
+
+    [Fact]
+    public void Serialization_Strips_SubSecond_Precision()
+    {
+        var fileBody = File.ReadAllText("v1Tests/examples/request.json");
+        var identificationParameter = JsonSerializer.Deserialize<IdentificationParameter>(fileBody);
+        identificationParameter.Should().NotBeNull();
+        while (
+            identificationParameter.IdentificationDateTime.Ticks == 0
+            || identificationParameter.IdentificationDateTime.Microsecond == 0
+        )
+        {
+            identificationParameter.IdentificationDateTime = DateTimeOffset.UtcNow;
+        }
+
+        identificationParameter.IdentificationDateTime.Ticks.Should().NotBe(0);
+        identificationParameter.IdentificationDateTime.Microsecond.Should().NotBe(0);
+        var serialized = JsonSerializer.Serialize(identificationParameter);
+        var strippedIdentificationDateTime = new DateTimeOffset(
+            identificationParameter.IdentificationDateTime.Year,
+            identificationParameter.IdentificationDateTime.Month,
+            identificationParameter.IdentificationDateTime.Day,
+            identificationParameter.IdentificationDateTime.Hour,
+            identificationParameter.IdentificationDateTime.Minute,
+            identificationParameter.IdentificationDateTime.Second,
+            TimeSpan.Zero
+        );
+        var strippedIdentificationDateTimeString = strippedIdentificationDateTime.ToString(
+            "yyyy-MM-ddTHH:mm:ssZ"
+        );
+        serialized.Should().Contain(strippedIdentificationDateTimeString);
+    }
 }
