@@ -1,6 +1,7 @@
 using System;
 using System.Text.Json.Serialization;
 using MaLoIdentModels.JsonSettings;
+using MaLoIdentModels.Validation;
 
 namespace MaLoIdentModels.v1;
 
@@ -10,6 +11,16 @@ public class IdentificationParameter
     [System.ComponentModel.DataAnnotations.Key]
     public Guid? Id { get; set; }
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <remarks>
+    /// Has to be midnight in German local time.
+    /// See Seite 6 von 111
+    /// 1.1.2 SD: Ermittlung der MaLo-ID der Marktlokation
+    /// https://www.bundesnetzagentur.de/DE/Beschlusskammern/1_GZ/BK6-GZ/2022/BK6-22-024/Beschluss/Anlage1b_GPKE_Teil2.pdf?__blob=publicationFile&v=1
+    /// </remarks>
+    [GermanMidnightValidation]
     [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("identificationDateTime")]
     public DateTimeOffset IdentificationDateTime { get; set; }
