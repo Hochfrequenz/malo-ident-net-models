@@ -82,7 +82,6 @@ public class DateTimeOffsetDeserializationTests
             .Be(new DateTimeOffset(2023, 8, 2, 22, 0, 0, 0, TimeSpan.Zero));
     }
 
-
     [Theory]
     [InlineData("2025-01-01T00:00:00Z", false)]
     [InlineData("2024-12-31T23:00:00Z", true)]
@@ -101,6 +100,7 @@ public class DateTimeOffsetDeserializationTests
         var results = new List<ValidationResult>();
         var isValidActual = Validator.TryValidateObject(parameter, context, results, true);
         isValidActual.Should().Be(isValidExpected);
+    }
 
     [Fact]
     public void Serialization_Strips_SubSecond_Precision()
