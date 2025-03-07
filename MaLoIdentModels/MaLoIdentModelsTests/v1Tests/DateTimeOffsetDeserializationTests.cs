@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using FluentAssertions;
 using MaLoIdentModels.v1;
@@ -79,6 +80,26 @@ public class DateTimeOffsetDeserializationTests
             .And.Subject.Invoke()
             .IdentificationDateTime.Should()
             .Be(new DateTimeOffset(2023, 8, 2, 22, 0, 0, 0, TimeSpan.Zero));
+    }
+
+    [Theory]
+    [InlineData("2025-01-01T00:00:00Z", false)]
+    [InlineData("2024-12-31T23:00:00Z", true)]
+    [InlineData("2025-06-30T22:00:00Z", true)]
+    [InlineData("2025-06-30T23:00:00Z", false)]
+    public void Validation_Of_German_Midnight_Works(
+        string dateTimeOffsetString,
+        bool isValidExpected
+    )
+    {
+        var parameter = new IdentificationParameter
+        {
+            IdentificationDateTime = DateTimeOffset.Parse(dateTimeOffsetString),
+        };
+        var context = new ValidationContext(parameter);
+        var results = new List<ValidationResult>();
+        var isValidActual = Validator.TryValidateObject(parameter, context, results, true);
+        isValidActual.Should().Be(isValidExpected);
     }
 
     [Fact]
