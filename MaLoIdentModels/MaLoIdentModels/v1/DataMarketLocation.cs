@@ -31,14 +31,14 @@ public class DataMarketLocation
     [JsonPropertyName("dataMarketLocationNetworkOperators")]
     public List<MarketLocationNetworkOperator>? DataMarketLocationNetworkOperators { get; set; }
 
-    [JsonConverter(typeof(EmptyListToNullConverter<LandParcel>))]
+    [JsonConverter(typeof(EmptyListToNullConverter<MarketLocationMeasuringPointOperator>))]
     [JsonPropertyName("dataMarketLocationMeasuringPointOperators")]
     public List<MarketLocationMeasuringPointOperator>? DataMarketLocationMeasuringPointOperators { get; set; }
     
     [JsonPropertyName("dataMarketLocationTransmissionSystemOperators")]
     public List<MarketLocationTransmissionSystemOperator>? DataMarketLocationTransmissionSystemOperators { get; set; }
 
-    [JsonConverter(typeof(EmptyListToNullConverter<LandParcel>))]
+    [JsonConverter(typeof(EmptyListToNullConverter<MarketLocationSupplier>))]
     [JsonPropertyName("dataMarketLocationSuppliers")]
     public List<MarketLocationSupplier>? DataMarketLocationSuppliers { get; set; }
 
