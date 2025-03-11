@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModels.v1;
 
@@ -30,12 +31,14 @@ public class DataMarketLocation
     [JsonPropertyName("dataMarketLocationNetworkOperators")]
     public List<MarketLocationNetworkOperator>? DataMarketLocationNetworkOperators { get; set; }
 
+    [JsonConverter(typeof(EmptyListToNullConverter<LandParcel>))]
     [JsonPropertyName("dataMarketLocationMeasuringPointOperators")]
     public List<MarketLocationMeasuringPointOperator>? DataMarketLocationMeasuringPointOperators { get; set; }
-
+    
     [JsonPropertyName("dataMarketLocationTransmissionSystemOperators")]
     public List<MarketLocationTransmissionSystemOperator>? DataMarketLocationTransmissionSystemOperators { get; set; }
 
+    [JsonConverter(typeof(EmptyListToNullConverter<LandParcel>))]
     [JsonPropertyName("dataMarketLocationSuppliers")]
     public List<MarketLocationSupplier>? DataMarketLocationSuppliers { get; set; }
 
@@ -45,9 +48,10 @@ public class DataMarketLocation
     [JsonPropertyName("dataMarketLocationAddress")]
     public Address? DataMarketLocationAddress { get; set; }
 
+    [JsonConverter(typeof(EmptyListToNullConverter<LandParcel>))]
     [JsonPropertyName("dataMarketLocationLandParcels")]
     public List<LandParcel>? DataMarketLocationLandParcels { get; set; }
-
+    
     [JsonPropertyName("dataMarketLocationGeographicCoordinates")]
     public GeographicCoordinates? DataMarketLocationGeographicCoordinates { get; set; }
 }
