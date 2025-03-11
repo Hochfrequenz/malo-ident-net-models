@@ -34,7 +34,7 @@ public class DataMarketLocation
     [JsonConverter(typeof(EmptyListToNullConverter<MarketLocationMeasuringPointOperator>))]
     [JsonPropertyName("dataMarketLocationMeasuringPointOperators")]
     public List<MarketLocationMeasuringPointOperator>? DataMarketLocationMeasuringPointOperators { get; set; }
-    
+
     [JsonPropertyName("dataMarketLocationTransmissionSystemOperators")]
     public List<MarketLocationTransmissionSystemOperator>? DataMarketLocationTransmissionSystemOperators { get; set; }
 
@@ -51,7 +51,7 @@ public class DataMarketLocation
     [JsonConverter(typeof(EmptyListToNullConverter<LandParcel>))]
     [JsonPropertyName("dataMarketLocationLandParcels")]
     public List<LandParcel>? DataMarketLocationLandParcels { get; set; }
-    
+
     [JsonPropertyName("dataMarketLocationGeographicCoordinates")]
     public GeographicCoordinates? DataMarketLocationGeographicCoordinates { get; set; }
 }
