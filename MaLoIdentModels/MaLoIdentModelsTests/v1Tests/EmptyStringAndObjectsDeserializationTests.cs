@@ -63,10 +63,18 @@ public class EmptyStringAndObjectsDeserializationTests
         var deserializedModel = deserializing();
         deserializedModel.Should().NotBeNull();
         deserializedModel.DataMarketLocation.Should().NotBeNull();
-        deserializedModel.DataMarketLocation.DataMarketLocationLandParcels.Should().BeNull(because: "this list contains one objects, that has only empty string fields");
-        deserializedModel.DataMarketLocation.DataMarketLocationGeographicCoordinates.Should().NotBeNull();
-        deserializedModel.DataMarketLocation.DataMarketLocationGeographicCoordinates.East.Should().BeNull(because: "field is empty string");
-        deserializedModel.DataMarketLocation.DataMarketLocationGeographicCoordinates.North.Should().BeNull(because: "field is empty string");
+        deserializedModel
+            .DataMarketLocation.DataMarketLocationLandParcels.Should()
+            .BeNull(because: "this list contains one objects, that has only empty string fields");
+        deserializedModel
+            .DataMarketLocation.DataMarketLocationGeographicCoordinates.Should()
+            .NotBeNull();
+        deserializedModel
+            .DataMarketLocation.DataMarketLocationGeographicCoordinates.East.Should()
+            .BeNull(because: "field is empty string");
+        deserializedModel
+            .DataMarketLocation.DataMarketLocationGeographicCoordinates.North.Should()
+            .BeNull(because: "field is empty string");
         deserializedModel.DataTranches.Should().BeNull(because: "this list is empty");
         deserializedModel.DataMeterLocations.Should().BeNull(because: "this list is empty");
         deserializedModel.DataTechnicalResources.Should().BeNull(because: "this list is empty");
