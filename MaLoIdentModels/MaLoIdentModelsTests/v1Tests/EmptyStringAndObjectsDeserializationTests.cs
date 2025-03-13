@@ -54,4 +54,29 @@ public class EmptyStringAndObjectsDeserializationTests
             );
         deserializedModel.IdentificationParameterAddress.LandParcels.Should().BeNull();
     }
+
+    [Fact]
+    public void Deserializing_Pos_Response_Objects_With_Empty_Strings()
+    {
+        var fileBody = File.ReadAllText("v1Tests/examples/positive_response_empty_lists.json");
+        var deserializedModel = JsonSerializer.Deserialize<ResultPositive>(fileBody);
+        deserializedModel.Should().NotBeNull();
+        deserializedModel.DataMarketLocation.Should().NotBeNull();
+        deserializedModel
+            .DataMarketLocation.DataMarketLocationLandParcels.Should()
+            .BeNull(because: "this list contains one object, that has only empty string fields");
+        deserializedModel
+            .DataMarketLocation.DataMarketLocationGeographicCoordinates.Should()
+            .NotBeNull();
+        deserializedModel
+            .DataMarketLocation.DataMarketLocationGeographicCoordinates.East.Should()
+            .BeNull(because: "field is empty string");
+        deserializedModel
+            .DataMarketLocation.DataMarketLocationGeographicCoordinates.North.Should()
+            .BeNull(because: "field is empty string");
+        deserializedModel.DataTranches.Should().BeNull(because: "this list is empty");
+        deserializedModel.DataMeterLocations.Should().BeNull(because: "this list is empty");
+        deserializedModel.DataTechnicalResources.Should().BeNull(because: "this list is empty");
+        deserializedModel.DataControllableResources.Should().BeNull(because: "this list is empty");
+    }
 }
