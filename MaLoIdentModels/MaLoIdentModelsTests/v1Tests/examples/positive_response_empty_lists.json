@@ -70,10 +70,10 @@
       "easting": "string"
     }
   },
-  "dataTranches": [ ],
-  "dataMeterLocations": [ ],
-  "dataTechnicalResources": [ ],
-  "dataControllableResources": [ ],
+  "dataTranches": [],
+  "dataMeterLocations": [],
+  "dataTechnicalResources": [],
+  "dataControllableResources": [],
   "dataNetworkLocations": [
     {
       "neloId": "E1234848431",
