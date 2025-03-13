@@ -65,7 +65,7 @@ public class EmptyStringAndObjectsDeserializationTests
         deserializedModel.DataMarketLocation.Should().NotBeNull();
         deserializedModel
             .DataMarketLocation.DataMarketLocationLandParcels.Should()
-            .BeNull(because: "this list contains one objects, that has only empty string fields");
+            .BeNull(because: "this list contains one object, that has only empty string fields");
         deserializedModel
             .DataMarketLocation.DataMarketLocationGeographicCoordinates.Should()
             .NotBeNull();
