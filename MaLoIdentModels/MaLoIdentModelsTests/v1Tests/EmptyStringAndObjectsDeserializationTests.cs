@@ -59,7 +59,7 @@ public class EmptyStringAndObjectsDeserializationTests
     public void Deserializing_Pos_Response_Objects_With_Empty_Strings()
     {
         var fileBody = File.ReadAllText("v1Tests/examples/positive_response_empty_lists.json");
-        var deserialiezdModel = JsonSerializer.Deserialize<ResultPositive>(fileBody);
+        var deserializedModel = JsonSerializer.Deserialize<ResultPositive>(fileBody);
         deserializedModel.Should().NotBeNull();
         deserializedModel.DataMarketLocation.Should().NotBeNull();
         deserializedModel
