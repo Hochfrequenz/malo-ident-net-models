@@ -1,39 +1,35 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <LangVersion>13</LangVersion>
-        <Nullable>enable</Nullable>
-        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-        <Authors>Hochfrequenz Unternehmensberatung GmbH</Authors>
-        <Description>Model classes for the Marktlokation Identification API by EDI@Energy</Description>
-        <PackageProjectUrl>https://github.com/Hochfrequenz/malo-ident-net-models/</PackageProjectUrl>
-        <license>MIT</license>
-        <RepositoryUrl>https://github.com/Hochfrequenz/malo-ident-net-models/</RepositoryUrl>
-        <TargetFrameworks>netstandard2.1;net8.0;net9.0</TargetFrameworks>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-    </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-      <NoWarn>1701;1702;NU5104</NoWarn>
-      <DebugSymbols>true</DebugSymbols>
-      <DebugType>embedded</DebugType>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-      <PackageReference Include="System.Text.Json" Version="9.0.2" />
-       <!-- we need System.Text.Json >= 9 to use the JsonStringEnumMemberNameAttribute -->
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Include=".config\dotnet-tools.json" />
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="README.md" Pack="true" PackagePath="\"/> <!-- copied to here during the release github action -->
-    </ItemGroup>
+  <PropertyGroup>
+    <LangVersion>13</LangVersion>
+    <Nullable>enable</Nullable>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <Authors>Hochfrequenz Unternehmensberatung GmbH</Authors>
+    <Description>Model classes for the Marktlokation Identification API by EDI@Energy</Description>
+    <PackageProjectUrl>https://github.com/Hochfrequenz/malo-ident-net-models/</PackageProjectUrl>
+    <license>MIT</license>
+    <RepositoryUrl>https://github.com/Hochfrequenz/malo-ident-net-models/</RepositoryUrl>
+    <TargetFrameworks>netstandard2.1;net8.0;net9.0</TargetFrameworks>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1701;1702;NU5104</NoWarn>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.2" />
+    <!-- we need System.Text.Json >= 9 to use the JsonStringEnumMemberNameAttribute -->
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".config\dotnet-tools.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <!-- copied to here during the release github action -->
+  </ItemGroup>
 </Project>
