@@ -1,6 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using FluentAssertions;
+using AwesomeAssertions;
 using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModelsTests.v1Tests;
