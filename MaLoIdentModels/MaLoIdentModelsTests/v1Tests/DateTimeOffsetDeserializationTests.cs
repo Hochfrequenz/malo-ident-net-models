@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
-using FluentAssertions;
+using AwesomeAssertions;
 using MaLoIdentModels.v1;
 
 namespace MaLoIdentModelsTests.v1Tests;
