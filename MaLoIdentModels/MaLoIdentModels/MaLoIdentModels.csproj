@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <LangVersion>13</LangVersion>
+    <LangVersion>14</LangVersion>
     <Nullable>enable</Nullable>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <Authors>Hochfrequenz Unternehmensberatung GmbH</Authors>
@@ -8,7 +8,7 @@
     <PackageProjectUrl>https://github.com/Hochfrequenz/malo-ident-net-models/</PackageProjectUrl>
     <license>MIT</license>
     <RepositoryUrl>https://github.com/Hochfrequenz/malo-ident-net-models/</RepositoryUrl>
-    <TargetFrameworks>netstandard2.1;net8.0;net9.0</TargetFrameworks>
+    <TargetFrameworks>net8.0;net9.0;netstandard2.1;net10.0</TargetFrameworks>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
