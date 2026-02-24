@@ -54,6 +54,40 @@ public class RoundTripTests
     }
 
     [Fact]
+    public void Test_DataForMarketLocationPositive_RealWorld()
+    {
+        var fileBody = File.ReadAllText(
+            "v1Tests/examples/dataForMarketLocationPositive_real_world.json"
+        );
+        var model = System.Text.Json.JsonSerializer.Deserialize<ResultPositive>(fileBody);
+        model.Should().NotBeNull();
+        model!.DataMarketLocation.Should().NotBeNull();
+        model.DataMarketLocation!.MaloId.Should().Be("79525609142");
+        model.DataMarketLocation.EnergyDirection.Should().Be(EnergyDirection.Consumption);
+        model
+            .DataMarketLocation.MeasurementTechnologyClassification.Should()
+            .Be(MeasurementTechnologyClassification.ConventionalMeasuringSystem);
+        model
+            .DataMarketLocation.DataMarketLocationNetworkOperators.Should()
+            .NotBeNullOrEmpty()
+            .And.HaveCount(1);
+        model
+            .DataMarketLocation.DataMarketLocationNetworkOperators![0]
+            .MarketPartnerId.Should()
+            .Be(9900000000001);
+        model
+            .DataMarketLocation.DataMarketLocationSuppliers.Should()
+            .NotBeNullOrEmpty()
+            .And.HaveCount(1);
+        model
+            .DataMarketLocation.DataMarketLocationAddress.Should()
+            .NotBeNull();
+        model.DataMarketLocation.DataMarketLocationAddress!.City.Should().Be("Nürnberg");
+        model.DataMeterLocations.Should().NotBeNullOrEmpty().And.HaveCount(1);
+        model.DataMeterLocations![0].MeloId.Should().Be("DE0001111222222223333333333344444");
+    }
+
+    [Fact]
     public void Test_README_Example()
     {
         var myNegativeResponse = new ResultNegative
