@@ -48,6 +48,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="v2Tests\examples\result_positive_empty_lists.json">
+    <None Update="v1Tests\examples\dataForMarketLocationPositive_real_world.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

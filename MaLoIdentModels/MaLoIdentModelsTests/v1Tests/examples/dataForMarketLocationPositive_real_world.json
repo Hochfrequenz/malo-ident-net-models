@@ -1,0 +1,64 @@
+{
+  "dataMarketLocation": {
+    "maloId": "79525609142",
+    "energyDirection": "consumption",
+    "measurementTechnologyClassification": "conventionalMeasuringSystem",
+    "optionalChangeForecastBasis": "possible",
+    "dataMarketLocationProperties": [
+      {
+        "marketLocationProperty": "standard",
+        "executionTimeFrom": "2016-11-03T00:00:00Z"
+      }
+    ],
+    "dataMarketLocationNetworkOperators": [
+      {
+        "marketPartnerId": 9900000000001,
+        "executionTimeFrom": "2025-06-19T00:00:00Z"
+      }
+    ],
+    "dataMarketLocationMeasuringPointOperators": [
+      {
+        "marketPartnerId": 9900000000002,
+        "executionTimeFrom": "2016-11-03T00:00:00Z"
+      }
+    ],
+    "dataMarketLocationTransmissionSystemOperators": [
+      {
+        "marketPartnerId": 9900000000003,
+        "executionTimeFrom": "2016-11-03T00:00:00Z"
+      }
+    ],
+    "dataMarketLocationSuppliers": [
+      {
+        "marketPartnerId": 9900000000004,
+        "executionTimeFrom": "2025-06-19T00:00:00Z"
+      }
+    ],
+    "dataMarketLocationName": {},
+    "dataMarketLocationAddress": {
+      "countryCode": "DE",
+      "zipCode": "90411",
+      "city": "Nürnberg",
+      "street": "Teststr.",
+      "houseNumber": 123
+    },
+    "dataMarketLocationGeographicCoordinates": {
+      "latitude": "11.12345 E",
+      "longitude": "49.6890 N",
+      "northing": "523456.78",
+      "easting": "4567890.90"
+    }
+  },
+  "dataMeterLocations": [
+    {
+      "meloId": "DE0001111222222223333333333344444",
+      "meterNumber": "0000000000000",
+      "dataMeterLocationMeasuringPointOperators": [
+        {
+          "marketPartnerId": 9900000000002,
+          "executionTimeFrom": "2016-11-03T00:00:00Z"
+        }
+      ]
+    }
+  ]
+}
