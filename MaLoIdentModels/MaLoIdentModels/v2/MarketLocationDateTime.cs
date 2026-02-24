@@ -16,7 +16,7 @@ public class MarketLocationDateTime
     /// Was <see cref="v1.MarketLocationDateTime.MaloId"/> in v1.
     /// </summary>
     [JsonPropertyName("identifierMarketLocation")]
-    [RegularExpression(@"\d{11}")]
+    [RegularExpression(@"^\d{11}$")] // anchors added; spec pattern is unanchored: https://github.com/EDI-Energy/api-electricity/issues/46
     public string? IdentifierMarketLocation { get; set; }
 
     [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]

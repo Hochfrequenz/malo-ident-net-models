@@ -10,7 +10,7 @@ public class Address
     public System.Guid? Id { get; set; }
 
     [JsonPropertyName("countryCode")]
-    [RegularExpression(@"[A-Z]{2}")]
+    [RegularExpression(@"^[A-Z]{2}$")] // anchors added; spec pattern is unanchored: https://github.com/EDI-Energy/api-electricity/issues/46
     public string? CountryCode { get; set; }
 
     [JsonPropertyName("zipCode")]

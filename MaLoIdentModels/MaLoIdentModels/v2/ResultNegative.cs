@@ -11,11 +11,11 @@ public class ResultNegative
     public System.Guid? Id { get; set; }
 
     [JsonPropertyName("decisionTree")]
-    [RegularExpression(@"E_\d{4}")]
+    [RegularExpression(@"^E_\d{4}$")] // anchors added; spec pattern is unanchored: https://github.com/EDI-Energy/api-electricity/issues/46
     public string? DecisionTree { get; set; }
 
     [JsonPropertyName("responseCode")]
-    [RegularExpression(@"A[A-Z\d]{2}")]
+    [RegularExpression(@"^A[A-Z\d]{2}$")] // anchors added; spec pattern is unanchored: https://github.com/EDI-Energy/api-electricity/issues/46
     public string? ResponseCode { get; set; }
 
     [JsonPropertyName("reason")]
