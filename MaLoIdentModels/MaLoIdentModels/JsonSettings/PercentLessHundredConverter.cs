@@ -42,6 +42,15 @@ public class PercentLessHundredConverter : JsonConverter<decimal?>
 
         // Normalize: remove trailing zeros but keep at most 3 decimal places
         var rounded = Math.Round(value.Value, 3, MidpointRounding.AwayFromZero);
+        if (rounded < 0 || rounded >= 100)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(value),
+                rounded,
+                "PercentLessHundred must be >= 0 and < 100."
+            );
+        }
+
         // G29 removes trailing zeros; we use InvariantCulture for '.' as decimal separator
         var stringValue = rounded.ToString("G29", CultureInfo.InvariantCulture);
         writer.WriteStringValue(stringValue);

@@ -11,9 +11,9 @@ public class MarketLocationDateTime
     [Key]
     public Guid? Id { get; set; }
 
-    [JsonPropertyName("maloId")]
+    [JsonPropertyName("identifierMarketLocation")]
     [RegularExpression(@"\d{11}")]
-    public string? MaloId { get; set; }
+    public string? IdentifierMarketLocation { get; set; }
 
     [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeFrom")]

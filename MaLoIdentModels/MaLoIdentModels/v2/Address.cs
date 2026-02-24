@@ -23,7 +23,7 @@ public class Address
     public string? Street { get; set; }
 
     [JsonPropertyName("houseNumber")]
-    public int HouseNumber { get; set; }
+    public int? HouseNumber { get; set; }
 
     [JsonPropertyName("houseNumberAddition")]
     public string? HouseNumberAddition { get; set; }

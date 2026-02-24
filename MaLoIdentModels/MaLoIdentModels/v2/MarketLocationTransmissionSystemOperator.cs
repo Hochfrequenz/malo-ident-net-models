@@ -10,6 +10,10 @@ public class MarketLocationTransmissionSystemOperator
     [System.ComponentModel.DataAnnotations.Key]
     public Guid? Id { get; set; }
 
+    /// <summary>
+    /// The 13-digit market partner ID. Serialized as <c>identifierTransmissionSystemOperator</c> on the wire.
+    /// The spec uses <c>string</c> with pattern <c>^\d{13}$</c>, but we keep <c>long</c> for type safety.
+    /// </summary>
     [JsonPropertyName("identifierTransmissionSystemOperator")]
     public long MarketPartnerId { get; set; }
 

@@ -21,9 +21,11 @@ public class MarketLocation
     [JsonPropertyName("measurementTechnologyClassification")]
     public MeasurementTechnologyClassification MeasurementTechnologyClassification { get; set; }
 
+    [JsonConverter(typeof(EmptyListToNullConverter<MarketLocationCharacteristic>))]
     [JsonPropertyName("characteristics")]
     public List<MarketLocationCharacteristic>? Characteristics { get; set; }
 
+    [JsonConverter(typeof(EmptyListToNullConverter<MarketLocationNetworkOperator>))]
     [JsonPropertyName("networkOperators")]
     public List<MarketLocationNetworkOperator>? NetworkOperators { get; set; }
 
@@ -31,6 +33,7 @@ public class MarketLocation
     [JsonPropertyName("measuringPointOperators")]
     public List<MarketLocationMeasuringPointOperator>? MeasuringPointOperators { get; set; }
 
+    [JsonConverter(typeof(EmptyListToNullConverter<MarketLocationTransmissionSystemOperator>))]
     [JsonPropertyName("transmissionSystemOperators")]
     public List<MarketLocationTransmissionSystemOperator>? TransmissionSystemOperators { get; set; }
 
