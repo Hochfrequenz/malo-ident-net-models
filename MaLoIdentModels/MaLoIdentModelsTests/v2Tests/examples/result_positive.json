@@ -12,28 +12,28 @@
     ],
     "networkOperators": [
       {
-        "identifierNetworkOperator": 9900987654321,
+        "identifierNetworkOperator": "9900987654321",
         "executionTimeFrom": "2023-08-01T22:00:00Z",
         "executionTimeUntil": "2023-08-01T22:00:00Z"
       }
     ],
     "measuringPointOperators": [
       {
-        "identifierMeasuringPointOperator": 9900987654321,
+        "identifierMeasuringPointOperator": "9900987654321",
         "executionTimeFrom": "2023-08-01T22:00:00Z",
         "executionTimeUntil": "2023-08-01T22:00:00Z"
       }
     ],
     "transmissionSystemOperators": [
       {
-        "identifierTransmissionSystemOperator": 9900987654321,
+        "identifierTransmissionSystemOperator": "9900987654321",
         "executionTimeFrom": "2023-08-01T22:00:00Z",
         "executionTimeUntil": "2023-08-01T22:00:00Z"
       }
     ],
     "suppliers": [
       {
-        "identifierSupplier": 9900987654321,
+        "identifierSupplier": "9900987654321",
         "executionTimeFrom": "2023-08-01T22:00:00Z",
         "executionTimeUntil": "2023-08-01T22:00:00Z"
       }
@@ -76,7 +76,7 @@
       "percentLessHundred": "75.912",
       "trancheSuppliers": [
         {
-          "identifierSupplier": 9900987654321,
+          "identifierSupplier": "9900987654321",
           "executionTimeFrom": "2023-08-01T22:00:00Z",
           "executionTimeUntil": "2023-08-01T22:00:00Z"
         }
@@ -89,7 +89,7 @@
       "meterNumber": "1SM-8465929523",
       "meterLocationMeasuringPointOperators": [
         {
-          "identifierMeasuringPointOperator": 9900987654321,
+          "identifierMeasuringPointOperator": "9900987654321",
           "executionTimeFrom": "2023-08-01T22:00:00Z",
           "executionTimeUntil": "2023-08-01T22:00:00Z"
         }
@@ -106,7 +106,7 @@
       "identifierControllableRessource": "C1234848431",
       "controllableResourceMeasuringPointOperators": [
         {
-          "identifierMeasuringPointOperator": 9900987654321,
+          "identifierMeasuringPointOperator": "9900987654321",
           "executionTimeFrom": "2023-08-01T22:00:00Z",
           "executionTimeUntil": "2023-08-01T22:00:00Z"
         }
@@ -118,7 +118,7 @@
       "identifierNetworkLocation": "E1234848431",
       "networkLocationMeasuringPointOperators": [
         {
-          "identifierMeasuringPointOperator": 9900987654321,
+          "identifierMeasuringPointOperator": "9900987654321",
           "executionTimeFrom": "2023-08-01T22:00:00Z",
           "executionTimeUntil": "2023-08-01T22:00:00Z"
         }

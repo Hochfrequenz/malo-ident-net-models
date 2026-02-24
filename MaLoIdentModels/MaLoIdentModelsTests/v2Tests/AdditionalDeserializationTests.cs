@@ -64,7 +64,7 @@ public class AdditionalDeserializationTests
     {
         var json = """
             {
-                "identifierNetworkOperator": 9900987654321,
+                "identifierNetworkOperator": "9900987654321",
                 "executionTimeFrom": "2023-08-01T22:00:00Z",
                 "executionTimeUntil": null
             }
@@ -82,7 +82,7 @@ public class AdditionalDeserializationTests
     {
         var json = """
             {
-                "identifierNetworkOperator": 9900987654321,
+                "identifierNetworkOperator": "9900987654321",
                 "executionTimeFrom": "2023-08-01T22:00:00Z"
             }
             """;

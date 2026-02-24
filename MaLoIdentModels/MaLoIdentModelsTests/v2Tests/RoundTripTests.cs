@@ -56,7 +56,7 @@ public class RoundTripTests
             DecisionTree = "E_0594",
             ResponseCode = "A10",
             Reason = "Ich bin ein Freitext.",
-            IdentifierNetworkOperator = 9900987654321,
+            IdentifierNetworkOperator = "9900987654321",
         };
         var myJson = System.Text.Json.JsonSerializer.Serialize(myNegativeResponse);
         Console.Out.WriteLine(myJson);

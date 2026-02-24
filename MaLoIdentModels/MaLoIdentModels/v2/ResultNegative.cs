@@ -22,8 +22,11 @@ public class ResultNegative
     public string? Reason { get; set; }
 
     /// <summary>
-    /// The network operator's market partner ID. Was <see cref="v1.ResultNegative.NetworkOperator"/> in v1.
+    /// The network operator's 13-digit market partner ID as string per v2 spec.
+    /// Serialized as <c>identifierNetworkOperator</c> on the wire.
+    /// Was <see cref="v1.ResultNegative.NetworkOperator"/> in v1.
     /// </summary>
     [JsonPropertyName("identifierNetworkOperator")]
-    public long? IdentifierNetworkOperator { get; set; }
+    [RegularExpression(@"^\d{13}$")]
+    public string? IdentifierNetworkOperator { get; set; }
 }

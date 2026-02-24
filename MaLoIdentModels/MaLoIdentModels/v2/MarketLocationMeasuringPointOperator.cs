@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using MaLoIdentModels.JsonSettings;
 
@@ -8,15 +9,16 @@ namespace MaLoIdentModels.v2;
 public class MarketLocationMeasuringPointOperator
 {
     [JsonIgnore]
-    [System.ComponentModel.DataAnnotations.Key]
+    [Key]
     public Guid? Id { get; set; }
 
     /// <summary>
-    /// The 13-digit market partner ID. Serialized as <c>identifierMeasuringPointOperator</c> on the wire.
-    /// The spec uses <c>string</c> with pattern <c>^\d{13}$</c>, but we keep <c>long</c> for type safety.
+    /// 13-digit market partner ID as string per v2 spec.
+    /// Serialized as <c>identifierMeasuringPointOperator</c> on the wire.
     /// </summary>
     [JsonPropertyName("identifierMeasuringPointOperator")]
-    public long MarketPartnerId { get; set; }
+    [RegularExpression(@"^\d{13}$")]
+    public string? MarketPartnerId { get; set; }
 
     [JsonConverter(typeof(DateTimeOffsetWithTrailingZConverter))]
     [JsonPropertyName("executionTimeFrom")]
