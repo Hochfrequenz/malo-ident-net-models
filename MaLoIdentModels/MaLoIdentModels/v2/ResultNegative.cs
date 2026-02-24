@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels.v2;
 
+/// <seealso cref="v1.ResultNegative">v1 equivalent</seealso>
 public class ResultNegative
 {
     [JsonIgnore]
@@ -20,6 +21,9 @@ public class ResultNegative
     [JsonPropertyName("reason")]
     public string? Reason { get; set; }
 
+    /// <summary>
+    /// The network operator's market partner ID. Was <see cref="v1.ResultNegative.NetworkOperator"/> in v1.
+    /// </summary>
     [JsonPropertyName("identifierNetworkOperator")]
     public long? IdentifierNetworkOperator { get; set; }
 }

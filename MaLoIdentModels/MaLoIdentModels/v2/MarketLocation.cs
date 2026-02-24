@@ -4,12 +4,19 @@ using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModels.v2;
 
+/// <summary>
+/// The market location entity in a positive identification result.
+/// </summary>
+/// <seealso cref="v1.DataMarketLocation">v1 equivalent (DataMarketLocation)</seealso>
 public class MarketLocation
 {
     [JsonIgnore]
     [System.ComponentModel.DataAnnotations.Key]
     public System.Guid? Id { get; set; }
 
+    /// <summary>
+    /// The market location identifier. Was <see cref="v1.DataMarketLocation.MaloId"/> in v1.
+    /// </summary>
     [JsonPropertyName("identifierMarketLocation")]
     public string? IdentifierMarketLocation { get; set; }
 
@@ -21,6 +28,9 @@ public class MarketLocation
     [JsonPropertyName("measurementTechnologyClassification")]
     public MeasurementTechnologyClassification MeasurementTechnologyClassification { get; set; }
 
+    /// <summary>
+    /// Was <see cref="v1.DataMarketLocation.DataMarketLocationProperties"/> in v1.
+    /// </summary>
     [JsonConverter(typeof(EmptyListToNullConverter<MarketLocationCharacteristic>))]
     [JsonPropertyName("characteristics")]
     public List<MarketLocationCharacteristic>? Characteristics { get; set; }

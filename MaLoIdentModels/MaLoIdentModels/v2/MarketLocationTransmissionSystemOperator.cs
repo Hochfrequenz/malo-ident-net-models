@@ -4,6 +4,7 @@ using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModels.v2;
 
+/// <seealso cref="v1.MarketLocationTransmissionSystemOperator">v1 equivalent</seealso>
 public class MarketLocationTransmissionSystemOperator
 {
     [JsonIgnore]

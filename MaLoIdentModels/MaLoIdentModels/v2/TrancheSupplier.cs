@@ -4,6 +4,7 @@ using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModels.v2;
 
+/// <seealso cref="v1.TrancheSupplier">v1 equivalent</seealso>
 public class TrancheSupplier
 {
     [JsonIgnore]
