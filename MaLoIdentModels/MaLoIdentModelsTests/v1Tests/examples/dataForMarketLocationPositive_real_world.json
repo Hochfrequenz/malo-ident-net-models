@@ -34,8 +34,7 @@
         "executionTimeFrom": "2025-06-19T00:00:00Z"
       }
     ],
-    "dataMarketLocationName": {
-    },
+    "dataMarketLocationName": {},
     "dataMarketLocationAddress": {
       "countryCode": "DE",
       "zipCode": "90411",
