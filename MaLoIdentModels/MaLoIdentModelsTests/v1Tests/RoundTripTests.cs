@@ -79,9 +79,7 @@ public class RoundTripTests
             .DataMarketLocation.DataMarketLocationSuppliers.Should()
             .NotBeNullOrEmpty()
             .And.HaveCount(1);
-        model
-            .DataMarketLocation.DataMarketLocationAddress.Should()
-            .NotBeNull();
+        model.DataMarketLocation.DataMarketLocationAddress.Should().NotBeNull();
         model.DataMarketLocation.DataMarketLocationAddress!.City.Should().Be("Nürnberg");
         model.DataMeterLocations.Should().NotBeNullOrEmpty().And.HaveCount(1);
         model.DataMeterLocations![0].MeloId.Should().Be("DE0001111222222223333333333344444");
