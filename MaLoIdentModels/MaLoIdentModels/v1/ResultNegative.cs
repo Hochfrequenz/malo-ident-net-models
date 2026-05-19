@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.ResultNegative">v2 equivalent</seealso>
 public class ResultNegative
 {
     [JsonIgnore]
