@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.TechnicalResource">v2 equivalent (TechnicalResource)</seealso>
 public class DataTechnicalResource
 {
     [JsonIgnore]
