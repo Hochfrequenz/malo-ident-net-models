@@ -5,6 +5,7 @@ using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.ResultPositive">v2 equivalent</seealso>
 public class ResultPositive
 {
     [JsonIgnore]

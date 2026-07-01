@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.MeterLocation">v2 equivalent (MeterLocation)</seealso>
 public class DataMeterLocation
 {
     [JsonIgnore]

@@ -4,6 +4,7 @@ using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.NetworkLocationMeasuringPointOperator">v2 equivalent</seealso>
 public class NetworkLocationMeasuringPointOperator
 {
     [JsonIgnore]
