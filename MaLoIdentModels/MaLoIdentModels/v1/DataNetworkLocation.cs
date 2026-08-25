@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.NetworkLocation">v2 equivalent (NetworkLocation)</seealso>
 public class DataNetworkLocation
 {
     [JsonIgnore]

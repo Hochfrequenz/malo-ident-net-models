@@ -4,6 +4,7 @@ using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.MarketLocationCharacteristic">v2 equivalent (MarketLocationCharacteristic)</seealso>
 public class DataMarketLocationProperties
 {
     [JsonIgnore]
