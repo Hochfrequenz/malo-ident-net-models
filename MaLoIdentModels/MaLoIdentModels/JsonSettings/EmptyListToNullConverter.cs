@@ -58,22 +58,8 @@ public class EmptyListToNullConverter<T> : JsonConverter<List<T>>
                 {
                     return string.IsNullOrWhiteSpace((string?)value);
                 }
-                if (value == null)
-                {
-                    return true;
-                }
-                var propertyType = property.PropertyType;
-                if (propertyType.IsClass || (propertyType.IsValueType && !propertyType.IsPrimitive))
-                {
-                    var method = typeof(EmptyListToNullConverter<T>).GetMethod(
-                        nameof(IsEmptyModel),
-                        System.Reflection.BindingFlags.NonPublic
-                            | System.Reflection.BindingFlags.Instance
-                    );
-                    var genericMethod = method?.MakeGenericMethod(propertyType);
-                    return (bool?)genericMethod?.Invoke(this, new[] { value }) ?? false;
-                }
-                return false;
+                // Non-null properties (value types, objects) mean the model has data.
+                return value == null;
             });
 
         return allChildPropertiesAreDefault;
