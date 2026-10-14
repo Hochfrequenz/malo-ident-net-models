@@ -4,6 +4,7 @@ using MaLoIdentModels.JsonSettings;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.ControllableResourceMeasuringPointOperator">v2 equivalent (ControllableResourceMeasuringPointOperator)</seealso>
 public class SrMarketPartner
 {
     [JsonIgnore]
