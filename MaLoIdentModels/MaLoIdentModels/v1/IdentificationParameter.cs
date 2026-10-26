@@ -5,6 +5,7 @@ using MaLoIdentModels.Validation;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.IdentificationParameter">v2 equivalent</seealso>
 public class IdentificationParameter
 {
     [JsonIgnore]

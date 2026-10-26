@@ -1,0 +1,128 @@
+{
+  "marketLocation": {
+    "identifierMarketLocation": "57685676748",
+    "energyDirection": "consumption",
+    "measurementTechnologyClassification": "intelligentMeasuringSystem",
+    "characteristics": [
+      {
+        "marketLocationProperty": "standard",
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "networkOperators": [
+      {
+        "identifierNetworkOperator": "9900987654321",
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "measuringPointOperators": [
+      {
+        "identifierMeasuringPointOperator": "9900987654321",
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "transmissionSystemOperators": [
+      {
+        "identifierTransmissionSystemOperator": "9900987654321",
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "suppliers": [
+      {
+        "identifierSupplier": "9900987654321",
+        "executionTimeFrom": "2023-08-01T22:00:00Z",
+        "executionTimeUntil": "2023-08-01T22:00:00Z"
+      }
+    ],
+    "name": {
+      "surnames": "Becker",
+      "firstnames": "Michael",
+      "title": "Prof.Dr.",
+      "company": "BDEW & Co. KG"
+    },
+    "address": {
+      "countryCode": "DE",
+      "zipCode": "12117",
+      "city": "Berlin",
+      "street": "Reinhardtstraße",
+      "houseNumber": 32,
+      "houseNumberAddition": "F"
+    },
+    "landParcels": [
+      {
+        "districtName": "string",
+        "lotNumber": "string",
+        "subLotNumber": "string"
+      }
+    ],
+    "geographicCoordinates": {
+      "latitude": "string",
+      "longitude": "string",
+      "east": "string",
+      "north": "string",
+      "zone": "UTMZone31",
+      "northing": "string",
+      "easting": "string"
+    }
+  },
+  "tranches": [
+    {
+      "identifierTranche": "57685676742",
+      "proportion": "percent",
+      "percentLessHundred": "75.912",
+      "trancheSuppliers": [
+        {
+          "identifierSupplier": "9900987654321",
+          "executionTimeFrom": "2023-08-01T22:00:00Z",
+          "executionTimeUntil": "2023-08-01T22:00:00Z"
+        }
+      ]
+    }
+  ],
+  "meterLocations": [
+    {
+      "identifierMeterLocation": "DE00014545768S0000000000000003054",
+      "meterNumber": "1SM-8465929523",
+      "meterLocationMeasuringPointOperators": [
+        {
+          "identifierMeasuringPointOperator": "9900987654321",
+          "executionTimeFrom": "2023-08-01T22:00:00Z",
+          "executionTimeUntil": "2023-08-01T22:00:00Z"
+        }
+      ]
+    }
+  ],
+  "technicalResources": [
+    {
+      "identifierTechnicalResource": "D1234848431"
+    }
+  ],
+  "controllableResources": [
+    {
+      "identifierControllableRessource": "C1234848431",
+      "controllableResourceMeasuringPointOperators": [
+        {
+          "identifierMeasuringPointOperator": "9900987654321",
+          "executionTimeFrom": "2023-08-01T22:00:00Z",
+          "executionTimeUntil": "2023-08-01T22:00:00Z"
+        }
+      ]
+    }
+  ],
+  "networkLocations": [
+    {
+      "identifierNetworkLocation": "E1234848431",
+      "networkLocationMeasuringPointOperators": [
+        {
+          "identifierMeasuringPointOperator": "9900987654321",
+          "executionTimeFrom": "2023-08-01T22:00:00Z",
+          "executionTimeUntil": "2023-08-01T22:00:00Z"
+        }
+      ]
+    }
+  ]
+}
