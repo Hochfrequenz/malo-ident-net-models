@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.Tranche">v2 equivalent (Tranche)</seealso>
 public class DataTranche
 {
     [JsonIgnore]

@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace MaLoIdentModels.v1;
 
+/// <seealso cref="v2.ControllableResource">v2 equivalent (ControllableResource)</seealso>
 public class DataControllableResource
 {
     [JsonIgnore]
